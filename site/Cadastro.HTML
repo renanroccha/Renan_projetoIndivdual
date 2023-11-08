@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="LoginStyle.CSS">
+    <link rel="stylesheet" href="CadastroStyle.CSS">
     <link rel="icon" href="./imagens/LogoSantos.png">
     <title>Login | TechSolutions</title>
     <!-- lib de icons -->
@@ -15,19 +15,18 @@
 <body>
 
     <div class="header">
-        
+
         <div class="container">
-            
+
             <img class="logo" src="./imagens/LogoSantos.png" alt="Logo da TechSolutions">
+            
             <div class="navbar">
                 
                 <ul>
                     
-                    <img class="logo2" src="./imagens/santos-do-mundo-dourado.png" alt="Logo da TechSolutions">
                     <li><a href="Index.html" class="buttonTodas"><b>Home</b></a></li> |
-                    <li><a href="cadastro.html" class="buttonTodas"><b>Cadastro </b></a></li> |
-                    <li><a href="Login.html" class="buttonLogin"><b>Login</b></a></li> 
-                    <img class="logo2" src="./imagens/santos-do-mundo-dourado.png" alt="Logo da TechSolutions">
+                    <li><a href="cadastro.html" class="buttonLogin"><b>Cadastro </b></a></li> |
+                    <li><a href="Login.html" class="buttonTodas"><b>Login</b></a></li> 
                     
                     
                 </ul>
@@ -35,22 +34,58 @@
             <img class="logo2" src="./imagens/santos-do-mundo-dourado.png" alt="Logo da TechSolutions">
         </div>
     </div>
-    
 
+    
     <div class="FundoImagem2">
 
 
         <div class="DivPrincipal2">
 
             <div class="titulo2">
-                <h1>Login</h1>
+                <h1>Cadastro</h1>
             </div>
 
             <div class="inputsEmailSenha2">
                 <div class="formulario">
+                    <p>Nome</p>
+                    <input id="ipt_nomeCompleto" type="password" placeholder="Digite sua senha">
                     <p>E-mail</p> <input id="ipt_email2" type="email" placeholder="Digite seu e-mail">
-                    <span id="alerta_email"></span>
+                    <span id="ipt_email"></span>
+                   <p>Estado</p>
+                    <select id="select_estado" name="estado">
+                        <option value="Selecione">Selecione Estado</option>
+                        <option value="AC">Acre</option>
+                        <option value="AL">Alagoas</option>
+                        <option value="AP">Amapá</option>
+                        <option value="AM">Amazonas</option>
+                        <option value="BA">Bahia</option>
+                        <option value="CE">Ceará</option>
+                        <option value="DF">Distrito Federal</option>
+                        <option value="ES">Espírito Santo</option>
+                        <option value="GO">Goiás</option>
+                        <option value="MA">Maranhão</option>
+                        <option value="MT">Mato Grosso</option>
+                        <option value="MS">Mato Grosso do Sul</option>
+                        <option value="MG">Minas Gerais</option>
+                        <option value="PA">Pará</option>
+                        <option value="PB">Paraíba</option>
+                        <option value="PR">Paraná</option>
+                        <option value="PE">Pernambuco</option>
+                        <option value="PI">Piauí</option>
+                        <option value="RJ">Rio de Janeiro</option>
+                        <option value="RN">Rio Grande do Norte</option>
+                        <option value="RS">Rio Grande do Sul</option>
+                        <option value="RO">Rondônia</option>
+                        <option value="RR">Roraima</option>
+                        <option value="SC">Santa Catarina</option>
+                        <option value="SP">São Paulo</option>
+                        <option value="SE">Sergipe</option>
+                        <option value="TO">Tocantins</option>
+                    </select>
+                    <span id="alerta_estado"></span>
                     <p>Senha</p>
+                    <input id="ipt_senha2" type="password" placeholder="Digite sua senha">
+                    <p>Confirmar senha</p>
                     <input id="ipt_senha2" type="password" placeholder="Digite sua senha">
                     <span id="botaoVerSenha" class="lnr lnr-eye" onclick="verSenha()"></span>
                     <span id="alerta_senha"></span>
@@ -199,3 +234,6 @@
         }
     }
 </script>
+
+
+    
