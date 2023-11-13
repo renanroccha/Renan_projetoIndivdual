@@ -47,30 +47,31 @@
 
             <div class="inputsEmailSenha2">
                 <div class="formulario">
-                    <p>Nome</p>
-                    <input id="ipt_nomeCompleto" type="password" placeholder="Digite sua senha">
-                    <p>E-mail</p> <input id="ipt_email2" type="email" placeholder="Digite seu e-mail">
-                    <span id="ipt_email"></span>
-                   <p>Estado</p>
-                    <select id="select_regiao" name="Regiao">
-                        <option value="Selecione">Selecione a Região</option>
-                        <option value="Sul">Sul</option>
-                        <option value="Sud">Sudeste</option>
-                        <option value="Ceo">Centro-Oeste</option>
-                        <option value="Not">Norte</option>
-                        <option value="Nor">Nordeste</option>
 
-                    </select>
-                    <span id="alerta_regiao"></span>
+                    <p>Nome</p>
+                    <input oninput="entrar ()" id="ipt_nome" type="text" placeholder="Digite seu nome">
+                    <span id="alerta_nome"></span><br>
+
+                    <p>E-mail</p> 
+                    <input oninput="entrar ()" id="ipt_email2" type="email" placeholder="Digite seu e-mail">
+                    <span id="alerta_email"></span><br>
+
+                   <p>Estado</p>
+                   <input oninput="entrar ()" id="ipt_regiao" type="text" placeholder="Digite sua região">
+                    <span id="alerta_regiao"></span><br>
+
                     <p>Senha</p>
-                    <input id="ipt_senha2" type="password" placeholder="Digite sua senha">
-                    <p>Confirmar senha</p>
-                    <input id="ipt_senha2" type="password" placeholder="Digite sua senha">
-                    <span id="botaoVerSenha" class="lnr lnr-eye" onclick="verSenha()"></span>
+                    <input oninput="entrar ()" id="ipt_senha1" type="password" placeholder="Digite sua senha">
                     <span id="alerta_senha"></span>
+                    <span id="botaoVerSenha" class="lnr lnr-eye" onclick="verSenha()"></span>
+
+                    <p>Confirmar senha</p>
+                    <input oninput="entrar ()" id="ipt_senha2" type="password" placeholder="Digite sua senha">
+                    <span id="alerta_ConfirmarSenha"></span>
+                    <span id="botaoVerSenha2" class="lnr lnr-eye" onclick="verSenha()"></span>
 
                     <div class="botaoEntrar">
-                        <button onclick="entrar ()" class="button_entrar">Entrar</button>
+                        <button onclick="entrar ()" class="button_entrar">Cadastrar</button>
 
                     </div>
                     <br>
@@ -86,8 +87,9 @@
 
     <div class="footer">
         <div class="containerr">
-          <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-          <span class="version">v1.0.0</span>
+            <img src="./imagens/LogoSantos.png">
+          <span class="version">Santos F.C.</span>
+          <img src="./imagens/santos-do-mundo-dourado.png">
         </div>
       </div>
 
@@ -97,11 +99,17 @@
 
 <script>
     function entrar() {
-
-        var senha = ipt_senha2.value;
+        
+        var senha = ipt_senha1.value;
+        var ConfirmarSenha = ipt_senha2.value;
         var email = ipt_email2.value;
+        var nome = ipt_nome.value;
+        var regiao = ipt_regiao.value;
         alerta_email.innerHTML = "";
         alerta_senha.innerHTML = "";
+        alerta_nome.innerHTML = "";
+        alerta_regiao.innerHTML = "";
+        alerta_ConfirmarSenha.innerHTML = "";
 
 
         if (senha.indexOf(" ") >= 0) {
@@ -139,6 +147,10 @@
             alerta_senha.innerHTML = `Verifique a sua senha, ela deve conter pelo menos de 8 á 16 caracteres`
         }
 
+        if(senha != ConfirmarSenha){
+            alerta_ConfirmarSenha.innerHTML = `Senha não compativél`
+        }
+
 
         if (email.indexOf(" ") >= 0) {
             alerta_email.innerHTML = `Insira um email válido`
@@ -163,17 +175,14 @@
                                 if (email.indexOf(".gov") == -1) {
                                     alerta_email.innerHTML = `Insira um email válido`
                                 }
+       
+                  if(regiao.indexOf("Sul") && regiao.indexOf("Sudeste") && regiao.indexOf("Centro-Oeste") && regiao.indexOf("Norte") && regiao.indexOf("Nordeste") ){
+                     alerta_regiao.innerHTML = `Selecione a sua região`
+                  }
 
-
-        if (email == 'frizza@gmail.com' && senha == 'B4n$n!nhA') {
-            alert('AUTENTICADO COM SUCESSO!')
-            window.location.href = "";
-        } else {
-            alert('FALHA NA AUTENTICAÇÃO, VERIFICAR E-MAIL E SENHA!')
-        }
-
-
-
+                  if(nome == ""){
+                    alerta_nome.innerHTML = `Insira seu nome`
+                  }
     }
 
     function verSenha() {
@@ -184,6 +193,15 @@
             inputPass.setAttribute('type', 'text')
         } else {
             inputPass.setAttribute('type', 'password')
+        }  
+ 
+        var inputPasss = document.getElementById('ipt_senha1');
+
+
+        if (inputPasss.type === 'password') {
+            inputPasss.setAttribute('type', 'text')
+        } else {
+            inputPasss.setAttribute('type', 'password')
         }
     }
 </script>

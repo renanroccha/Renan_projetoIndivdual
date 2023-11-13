@@ -67,7 +67,9 @@
   }
   
   .DivPrincipal2{
-    background-color: #f8f5ec;
+    background: transparent;
+    backdrop-filter: blur(8px);
+    color: #F8F5EC;
     width: 400px;
     height: 60vh;
     display: flex;
@@ -153,7 +155,7 @@
     /* border: purple solid 2px; linha guia da div */
     text-decoration: none;
     font-size: 12px;
-    color: rgb(174, 24, 24);
+    color: #ff4800;
     align-items: center;
     text-align: center;
   }
@@ -163,7 +165,7 @@
     /* border: purple solid 2px; linha guia da div */
     text-decoration: none;
     font-size: 12px;
-    color: rgb(174, 24, 24);
+    color: #ff4800;
     
     align-items: center;
     text-align: center;
@@ -214,8 +216,9 @@
     color: #fff;
   }
   
-  .footer h4 {
+  .footer img {
     margin: 0;
+    width: 60px;
   }
   
   .footer .containerr {
@@ -223,14 +226,13 @@
     justify-content: center;
     flex-direction: column;
     height: 100%;
-    margin-left: 85vh;
+    margin-left: 90vh;
   }
   
   .footer .containerr .version {
-    font-size: 12px;
+    font-size: 20px;
     font-weight: 800;
   }
-  
   
   /* fim footer */
 
