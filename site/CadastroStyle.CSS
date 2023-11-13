@@ -68,7 +68,7 @@
   
   .DivPrincipal2{
     background: transparent;
-    backdrop-filter: blur(6px);
+    backdrop-filter: blur(8px);
     color: #F8F5EC;
     width: 400px;
     height: 85vh;
