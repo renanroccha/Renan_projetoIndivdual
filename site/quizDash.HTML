@@ -157,11 +157,66 @@
             </label> 
         </section>
         
-        <button onclick="corregir()">Corregir</button>
+        <section id="p10">
+            <h3>11 - Qual jogador perdeu um gol feito na final da Copa do Brasil 2015 contra o Palmeiras?</h3>
+            <label>
+                <input type="radio" value="1" name="p10" onclick="resposta(10,this)"> Nilson
+            </label> <label>
+                <input type="radio" value="2" name="p10" onclick="resposta(10,this)"> Ricardo Oliveira
+            </label> <label>
+                <input type="radio" value="3" name="p10" onclick="resposta(10,this)"> Lucas Lima
+            </label> 
+        </section>
+        
+        <section id="p11">
+            <h3>12 - Quem era o técnico do Santos em 2012?</h3>
+            <label>
+                <input type="radio" value="1" name="p11" onclick="resposta(11,this)"> Tite
+            </label> <label>
+                <input type="radio" value="2" name="p11" onclick="resposta(11,this)"> Osvaldo de Oliveira
+            </label> <label>
+                <input type="radio" value="3" name="p11" onclick="resposta(11,this)"> Muricy Ramalho
+            </label> 
+        </section>
+        
+        <section id="p12">
+            <h3>13 - Contra qual time o Santos foi Vice-Campeão no Mundial de clubes em 2011?</h3>
+            <label>
+                <input type="radio" value="1" name="p12" onclick="resposta(12,this)"> Real Madrid
+            </label> <label>
+                <input type="radio" value="2" name="p12" onclick="resposta(12,this)"> Barcelona
+            </label> <label>
+                <input type="radio" value="3" name="p12" onclick="resposta(12,this)"> Bayern de Munich
+            </label> 
+        </section>
+        
+        <section id="p13">
+            <h3>14 - Contra qual time o Santos foi Vice-Campeão no Mundial de clubes em 2011?</h3>
+            <label>
+                <input type="radio" value="1" name="p13" onclick="resposta(13,this)"> Real Madrid
+            </label> <label>
+                <input type="radio" value="2" name="p13" onclick="resposta(13,this)"> Barcelona
+            </label> <label>
+                <input type="radio" value="3" name="p13" onclick="resposta(13,this)"> Bayern de Munich
+            </label> 
+        </section>
+        
+        <section id="p14">
+            <h3>15 - Contra qual time o Santos foi Vice-Campeão no Mundial de clubes em 2011?</h3>
+            <label>
+                <input type="radio" value="1" name="p14" onclick="resposta(14,this)"> Real Madrid
+            </label> <label>
+                <input type="radio" value="2" name="p14" onclick="resposta(14,this)"> Barcelona
+            </label> <label>
+                <input type="radio" value="3" name="p14" onclick="resposta(14,this)"> Bayern de Munich
+            </label> 
+        </section>
+        
+        <button onclick="corrigir()">Corrigir</button>
         <h2>Quantidade acertadas: <span id="resultado"></span></h2>
     </div>
     <script>
-        var corretas = [2,1,3,1,2,3,2,3,1,2]
+        var corretas = [2,1,3,1,2,3,2,3,1,2,1,3]
         var opcao = []
         var qtdCorretas = 0
 
@@ -179,7 +234,7 @@
             selecionada.parentNode.style.backgroundColor = "#68f196"
         }
 
-        function corregir() {
+        function corrigir() {
             qtdCorretas = 0;
              for(i=0; i < corretas.length; i++){
                 if(corretas[i] == opcao[i]){

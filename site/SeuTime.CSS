@@ -1,64 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@300&display=swap');
 
-.containerr{
-max-width: 700px;
-margin: auto;
-padding: 20px;
-}
-
-section{
-    border: 2px solid #171614;
-    border-radius: 7px;
-    padding: 10px;
-    margin: 10px 0;
-}
-
-label{
-    display: block;
-    margin-left: 50vh;
-    padding: 7px;
-    border-radius: 7px;
-    cursor: pointer;
-    border: 1px dashed #171614;
-    margin-bottom: 3px;
-}
-
-h3{
-    margin-left: 50vh;
-}
-
-label:hover{
-    background: #d8b804;
-}
-button{
-    width: 30%;
-    display: block;
-    margin-left: 90vh;
-    padding: 10px;
-    background-color: #171614;
-    color: #e7eaf0;
-    border: none;
-    cursor: pointer;
-    border-radius: 20px;
-
-}
-button:hover{
-    background: #4d4646;
-    color: aqua;
-}
-h2{
-    text-align: center;
-    
-}
-
-#resultado{
-    font-size: 30px;
-    color: #adb8b1,
-}
-
-
-
-
 body {
     margin: 0;
     background-color: #e7eaf0;
@@ -168,4 +109,39 @@ body{
     margin-left: 23%;
   }
   
+    
+
+  .caixa{
+    max-width: 700px;
+    margin: auto;
+    padding: 20px;
+    margin-left: 95vh;
+  }
+
+  #div_mensagem{
+    font-size: 30px;
+  }
+
+  #ipt_time{
+    background-color: #F8F5EC;
+    border-radius: 5px;
+    border: 2px solid #5C5B5B;
+    width: 40%;
+    height: 30px;
+    font-size: 15px;
+    padding-left: 20px;
+
+  }
+
+  .buttonTime{
+    width: 120px;
+    height: 35px;
+    background-color:#171614;
+    color: white;
+    border-radius: 5px;
+    font-size: 15px;
+    border: none;
+
+
+  }
   

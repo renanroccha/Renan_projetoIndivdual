@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="SeuTime.CSS">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="icon" href="./imagens/LogoSantos.png">
+    <title>Seu Time | Santos F.C.</title>
+</head>
+
+<body>
+
+    <div class="header">
+        <h2 class="titulo">Monte seu time </h2>
+    </div>
+
+    <nav id="menuLateral">
+        <div class="container">
+            <p><img id="imgPerfil" src="./imagens/Renanzinho.jpg" alt=""></p>
+
+            <p>Bem Vindo</p>
+
+            <div class="container-itens">
+                <div class="item">
+                    <a href="../Dashboard/Dashboard.html"><span class="material-symbols-outlined"> monitoring</span>
+                        Dashboard</a>
+                </div>
+
+                <div class="item">
+                    <a href="./Armazem.html"> <span class="material-symbols-outlined">Quiz</span>
+                        Quiz</a>
+                </div>
+
+                <div class="item">
+                    <b><a href="tabeladefuncionarios.html"> <span class="material-symbols-outlined">groups</span>
+                            Seu Time!</a></b>
+                </div>
+            </div>
+
+            <div class="buttonSair">
+                <a href="../Login.HTML"> <span class="material-symbols-outlined">logout</span>Sair</a>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="caixa">
+        <input id="ipt_time" type="text"><br>
+        <button class="buttonTime" onclick="Cadastrar ()">Cadastrar Jogador(a)</button><br>
+        <div id="div_mensagem"></div><br>
+
+        <h2>Qual time vai ser?</h2>
+        <button onclick="sortear ()">Ver</button><br>
+        <div id="div_sorteio"></div><br>
+    </div>
+
+    <script>
+
+        var time = []
+
+        function Cadastrar() {
+
+            var times = ipt_time.value
+            time.push(times)
+            div_mensagem.innerHTML = ''
+            ipt_time.value = ''
+
+            // div_mensagem.innerHTML += time[time.length-1]
+
+            for (i = 0; i < time.length; i++) {
+
+                if (i == 0) {
+                    div_mensagem.innerHTML += `GOL - ${time[i]} <br>`
+                }
+
+                if (i == 1 || i == 2) {
+                    div_mensagem.innerHTML += `ZAG - ${time[i]} <br>`
+                }
+
+                if (i == 3) {
+                    div_mensagem.innerHTML += `LD - ${time[i]} <br>`
+                }
+
+                if (i == 4) {
+                    div_mensagem.innerHTML += `LE - ${time[i]} <br>`
+                }
+
+                if (i == 5) {
+                    div_mensagem.innerHTML += `VOL - ${time[i]} <br>`
+                }
+
+                if (i == 6 || i == 7) {
+                    div_mensagem.innerHTML += `MC - ${time[i]} <br>`
+                }
+
+                if (i == 8) {
+                    div_mensagem.innerHTML += `PTD - ${time[i]} <br>`
+                }
+
+                if (i == 9) {
+                    div_mensagem.innerHTML += `PTE - ${time[i]} <br>`
+                } 
+
+                if (i == 10) {
+                    div_mensagem.innerHTML += `ATA - ${time[i]} <br>`
+                }
+                if (i == 11) {
+                    div_mensagem.innerHTML += `TEC - ${time[i]} <br>`
+                }
+            }
+        }
+
+
+        function sortear() {
+
+            var max = 100;
+            var min = 0;
+            var intervalo = max - min;
+            var aleatorio = min + Math.random() * intervalo
+
+            if (aleatorio <= 25) {
+                div_sorteio.innerHTML = `<img style = "height: 150px;" src="https://i.pinimg.com/564x/1b/9e/a5/1b9ea5c4ff66163c56a7755d10191e7d.jpg">`
+            } else if (aleatorio <= 50) {
+                div_sorteio.innerHTML = `<img style = "height: 150px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Santos_logo.svg/1045px-Santos_logo.svg.png">`
+            } else if (aleatorio <= 75) {
+                div_sorteio.innerHTML = `<img style = "height: 150px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Brasao_do_Sao_Paulo_Futebol_Clube.svg/2054px-Brasao_do_Sao_Paulo_Futebol_Clube.svg.png">`
+            } else {
+                div_sorteio.innerHTML = `<img style = "height: 150px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Palmeiras_logo.svg/768px-Palmeiras_logo.svg.png">`
+            }
+        }
+
+
+
+    </script>
