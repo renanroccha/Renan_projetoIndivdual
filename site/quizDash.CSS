@@ -85,10 +85,18 @@ body{
   
   }
   
-  #imgPerfil{
-    height: 100px;
-    width: 120px;
+  .foto{
+    height: 110px;
+    width: 125px;
     margin-bottom: 5px;
+    object-fit: cover;
+  }
+
+  .arquivo{
+    color: #dfd3d3;
+    border-radius: 5px;
+    font-size: 13px;
+    border: none;
   }
   
   #menuLateral{
