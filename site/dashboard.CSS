@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Roboto:wght@300&display=swap');
+
+body {
+    margin: 0;
+    background-color: #e7eaf0;
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    background-color: #e7e4de ;
+    padding-left: 380px;
+    border-bottom: 4px solid #171614;
+}
+
+.titulo {
+    font-size: 25px;
+    color: #d8b804;
+}
+
+body{
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Poppins', sans-serif;
+  
+  }
+  
+  .foto{
+    height: 110px;
+    width: 125px;
+    margin-bottom: 5px;
+    object-fit: cover;
+  }
+
+  .arquivo{
+    color: #dfd3d3;
+    border-radius: 5px;
+    font-size: 13px;
+    border: none;
+  }
+  
+  #menuLateral{
+    height: 100%;
+    width: 22%;
+    background-color: #171614;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    text-align: center;
+    padding-top: 2%;
+  }
+  
+  .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .container-itens {
+    margin-top: 30px
+  }
+  
+  .item{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 220px;
+    border-bottom: solid white 1px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+  
+  #menuLateral a{
+    padding: 16px;
+    text-decoration: none;
+    font-size: 22px;
+    color: white;
+    display: block;
+    cursor: pointer;
+    width: fit-content;
+  }
+  
+  #menuLateral a span {
+    padding-right: 25px;
+  }
+  
+  #menuLateral p{
+    font-size: 28px;
+    color: white;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  
+  
+  .buttonSair {
+    margin-top: 45px;
+  }
+  
+  #conteudoPrincipal{
+    margin-left: 23%;
+  }
+
+  .grafico{
+    background-color: #eff6ffce;
+    width: 600px;
+    height: 400px;
+
+
+}
+
+
+.conteinerr{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 78%;
+    margin-left: 200px;
+
+}
+
+.fundo{
+    height: 100vh;
+    width: 100%;
+    background-image: url('https://s2-g1.glbimg.com/uK8XKL_9Nvn8n9GpreVSB_MtjNo=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2022/N/C/facJz0SvWWgng5Kztz9A/1974-pele-emidiomarquesmesquita-santos-pontepreta-vilabelmiro-gazetapress.jpg');
+    display: flex;
+    justify-content: center;
+    background-size: cover;
+    align-items: center;
+}
+
+.tituloo{
+    font-family: 'Noto Serif', serif;
+    color: white;
+
+}

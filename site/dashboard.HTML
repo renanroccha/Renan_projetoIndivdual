@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dashboard.CSS">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="icon" href="./imagens/LogoSantos.png">
+    <title>Estatísticas | Santos F.C.</title>
+</head>
+
+<body>
+
+    <div class="header">
+        <h2 class="titulo">Estatísticas</h2>
+    </div>
+
+    <nav id="menuLateral">
+        <div class="container">
+            <p><img class="foto"  src="./imagens/Renanzinho.jpg"/>
+                <input class="arquivo" type="file"></p>
+
+            <p>Santos F.C.</p>
+
+            <div class="container-itens">
+                <div class="item">
+                    <b> <a href="dashboard.html"><span class="material-symbols-outlined"> monitoring</span> Estatística</a>
+                    </b></div>
+
+                <div class="item">
+                    <a href="quizDash.HTML"> <span class="material-symbols-outlined">Quiz</span>
+                            Quiz</a>
+                </div>
+
+                <div class="item">
+                    <a href="seuTime.HTML"> <span class="material-symbols-outlined">groups</span>
+                        Seu Time!</a>
+                </div>
+            </div>
+
+            <div class="buttonSair">
+                <a href="../Login.HTML"> <span class="material-symbols-outlined">logout</span>Sair</a>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="fundo">
+
+    <div class="tituloo">
+        <h1>Média de Acertos</h1>
+       </div>
+    <div class="conteinerr">
+      <div class="grafico">
+        <canvas id="myChart"></canvas>
+  
+        </div>
+       
+    
+      <div class="grafico">
+        <canvas id="myChart2"></canvas>
+      </div>
+    </div>
+
+    </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        
+        <script>
+          const ctx = document.getElementById('myChart');
+        
+          new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: ['Total'],
+              datasets: [{
+                label: 'Sul',
+                backgroundColor:'blue',
+                  borderColor: 'black',
+                data: [22],
+                borderWidth: 1
+              } , 
+              {
+  
+                  label: 'Sudeste',
+                  backgroundColor:'yellow',
+                  borderColor: 'black',
+                  data: [50],
+                borderWidth: 1
+              }   ,
+              
+              {
+  
+                  label: 'Centro-Oeste',
+                  backgroundColor:'red',
+                  borderColor: 'black',
+                  data: [40],
+                borderWidth: 1
+              }   ,
+              
+              {
+  
+                  label: 'Norte',
+                  backgroundColor:'green',
+                  borderColor: 'black',
+                  data: [15],
+                borderWidth: 1
+              }   ,
+              
+              {
+  
+                  label: 'Nordeste',
+                  backgroundColor:'brown',
+                  borderColor: 'black',
+                  data: [28],
+                borderWidth: 1
+              }
+          ]
+            },
+            options: {
+              scales: {
+                y: {
+                  beginAtZero: true
+                }
+              }
+            }
+          });
+  
+          const ctx2 = document.getElementById('myChart2');
+          
+        
+          new Chart(ctx2, {
+            type: 'doughnut',
+            data: {
+              labels: ['Sul', 'Sudeste', 'Centro-Oeste', 'Norte', 'Nordeste'],
+              datasets: [{
+                label: 'Média',
+                backgroundColor:['blue', 'yellow', 'red', 'green', 'brown'],
+                borderColor: 'black',
+                data: [20, 42, 18, 8, 10],
+                borderWidth: 1
+              } , 
+            
+          ]
+            },
+            options: {
+              scales: {
+                y: {
+                  beginAtZero: true
+                }
+              }
+            }
+          });
+
+   const image = document.querySelector("img"),
+   input = document.querySelector("input");
+
+   input.addEventListener("change", () => {
+    image.src = URL.createObjectURL(input.files[0]);
+   });
+        </script>
+
+</body>
+</html>
