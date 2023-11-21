@@ -67,7 +67,8 @@ function cadastrar(req, res) {
         res.status(400).send("Sua regiao está undefined!");
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está undefined!");
-    } else {
+    } else
+
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
         usuarioModel.cadastrar(nome, email, regiao, senha)
@@ -86,7 +87,7 @@ function cadastrar(req, res) {
                 }
             );
     }
-}
+
 
 module.exports = {
     autenticar,

@@ -1,87 +1,90 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>AquaTech | Login</title>
-
-    <script src="./js/sessao.js"></script>
-
-    <link rel="icon" href="./assets/icon/favicon2.ico">
-    <link rel="stylesheet" href="./css/estilo.css">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="./css/LoginStyle.CSS">
+    <link rel="icon" href="./assets/LogoSantos.png">
+    <title>Login | Santos F.C.</title>
+    <!-- lib de icons -->
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 </head>
+
 
 <body>
 
-    <!--Header-->
-
     <div class="header">
+        
         <div class="container">
-            <h1 class="titulo">AquaTech</h1>
-            <ul class="navbar">
-                <li>
-                    <a href="index.html">Inicial</a>
-                </li>
-                <li>
-                    <a href="simulador.html">Simulador</a>
-                </li>
-                <li>|</li>
-                <li class="agora">
-                    <a href="#">Login</a>
-                </li>
-                <li>
-                    <a href="cadastro.html">Cadastro</a>
-                </li>
-            </ul>
+            
+            <img class="logo" src="./assets/LogoSantos.png" alt="Logo do Santos">
+            <div class="navbar">
+                
+                <ul>
+                    
+                   
+                    <li><a href="Index.html" class="buttonTodas"><b>Home</b></a></li> |
+                    <li><a href="cadastro.html" class="buttonTodas"><b>Cadastro </b></a></li> |
+                    <li><a href="Login.html" class="buttonLogin"><b>Login</b></a></li> 
+    
+                    
+                    
+                </ul>
+            </div>
+            <img class="logo2" src="./assets/santos-do-mundo-dourado.png" alt="Logo da TechSolutions">
         </div>
     </div>
+    
+
+    <div class="FundoImagem2">
 
 
-    <div class="login">
-        <div class="alerta_erro">
-            <div class="card_erro" id="cardErro">
-                <span id="mensagem_erro"></span>
+        <div class="DivPrincipal2">
+
+            <div class="titulo2">
+                <h1>Login</h1>
             </div>
-        </div>
-        <div class="container">
-            <div class="card card-login">
-                <h2>Olá de volta!</h2>
+
+            <div class="inputsEmailSenha2">
                 <div class="formulario">
-                    <div class="campo">
-                        <span>E-mail:</span>
-                        <input id="email_input" type="text" placeholder="Login">
+                    <p>E-mail</p> 
+                    <input id="ipt_email2" type="email" placeholder="Digite seu e-mail">
+                    <span id="alerta_email"></span>
+
+                    <p>Senha</p>
+                    <input id="ipt_senha2" type="password" placeholder="Digite sua senha">
+                    <span id="botaoVerSenha" class="lnr lnr-eye" onclick="verSenha()"></span>
+                    <span id="alerta_senha"></span>
+
+                    <div class="botaoEntrar">
+                        <button onclick="entrar()" class="button_entrar">Entrar</button>
+
                     </div>
-                    <div class="campo">
-                        <span>Senha:</span>
-                        <input id="senha_input" type="password" placeholder="******">
+
                     </div>
-                    <button class="botao" onclick="entrar()">Entrar</button>
+
                 </div>
 
-                <div id="div_aguardar" class="loading-div">
-                    <img src="./assets/circle-loading.gif" id="loading-gif">
-                </div>
-
-                <div id="div_erros_login"></div>
             </div>
+
         </div>
     </div>
 
-    <!--footer inicio-->
+
     <div class="footer">
-        <div class="container">
-            <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-            <span class="version">v1.0.0</span>
+        <div class="containerr">
+            <img src="./assets/LogoSantos.png">
+          <span class="version">Santos F.C.</span>
+          <img src="./assets/santos-do-mundo-dourado.png">
         </div>
-    </div>
-    <!--footer fim-->
+      </div>
+      </div>
+
+   
+
+
+
 
 </body>
 
@@ -93,10 +96,10 @@
     function entrar() {
         aguardar();
 
-        var emailVar = email_input.value;
-        var senhaVar = senha_input.value;
+        var email = ipt_email2.value;
+        var senha = ipt_senha2.value;
 
-        if (emailVar == "" || senhaVar == "") {
+        if (email == "" || senha == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
             finalizarAguardar();
@@ -106,8 +109,8 @@
             setInterval(sumirMensagem, 5000)
         }
 
-        console.log("FORM LOGIN: ", emailVar);
-        console.log("FORM SENHA: ", senhaVar);
+        console.log("FORM LOGIN: ", email);
+        console.log("FORM SENHA: ", senha);
 
         fetch("/usuarios/autenticar", {
             method: "POST",
@@ -115,8 +118,8 @@
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                emailServer: emailVar,
-                senhaServer: senhaVar
+                emailServer: email,
+                senhaServer: senha
             })
         }).then(function (resposta) {
             console.log("ESTOU NO THEN DO entrar()!")
@@ -130,7 +133,7 @@
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.id;
-                    sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
+                   // sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
 
                     setTimeout(function () {
                         window.location = "./dashboard/cards.html";
