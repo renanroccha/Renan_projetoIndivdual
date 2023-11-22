@@ -82,10 +82,6 @@
       </div>
 
    
-
-
-
-
 </body>
 
 </html>
@@ -94,20 +90,60 @@
 
 
     function entrar() {
-        aguardar();
+       // aguardar();
 
         var email = ipt_email2.value;
         var senha = ipt_senha2.value;
+        var validacao = 0;
 
-        if (email == "" || senha == "") {
-            cardErro.style.display = "block"
-            mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
-            finalizarAguardar();
-            return false;
-        }
-        else {
-            setInterval(sumirMensagem, 5000)
-        }
+    if (email.indexOf(" ") >= 0) {
+      alerta_email.innerHTML = `Insira um email válido`
+      validacao = 1;
+    }
+
+    if (email.indexOf("@") == -1) {
+      alerta_email.innerHTML = `Insira um email válido`
+
+      validacao = 1;
+    }
+
+    if (email.indexOf(".com") == -1 && email.indexOf(".br") == -1 && email.indexOf(".net") == -1 && email.indexOf(".org") == -1 && email.indexOf(".io") == -1 && email.indexOf(".company") == -1 && email.indexOf(".gov") == -1) {
+      alerta_email.innerHTML = `Insira um email válido`
+
+      validacao = 1;
+    }
+
+
+    if (senha.indexOf(" ") >= 0) {
+      alerta_senha.innerHTML = `Sua senha não pode conter espaço`
+      validacao = 1;
+    }
+
+    if (senha.indexOf("!") == -1 && senha.indexOf("@") == -1 && senha.indexOf("/") == -1 && senha.indexOf("?") == -1 && senha.indexOf("#") == -1 && senha.indexOf("*") == -1 && senha.indexOf(".") == -1) {
+
+      alerta_senha.innerHTML = `Sua senha deve conter pelo menos uma LETRA MAIÚSCULA e Caracteres especiais "!@/?#*."`
+      validacao = 1;
+    }
+
+    if (senha != senha.toUpperCase() && senha != senha.toLowerCase()) {
+    } else {
+      validacao = 1;
+      alerta_senha.innerHTML = `Sua senha deve conter pelo menos uma Letra MAIÚSCULA, minúscula e Caracteres especiais "!@/?#*."`
+    }
+
+    if (senha.length < 8) {
+      alerta_senha.innerHTML = `Verifique a sua senha, ela deve conter pelo menos de 8 á 16 caracteres`
+      validacao = 1;
+    }
+
+
+    if (senha.length > 16) {
+      alerta_senha.innerHTML = `Verifique a sua senha, ela deve conter pelo menos de 8 á 16 caracteres`
+      validacao = 1;
+    }
+
+
+        if(validacao ==0){
 
         console.log("FORM LOGIN: ", email);
         console.log("FORM SENHA: ", senha);
@@ -130,14 +166,15 @@
                 resposta.json().then(json => {
                     console.log(json);
                     console.log(JSON.stringify(json));
+                    sessionStorage.NOME_USUARIO = json.nome; 
                     sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
-                   // sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
+                    sessionStorage.REGIAO_USUARIO = json.regiao;
+                    sessionStorage.ID_USUARIO = json.idUsuario;
+                   
 
-                    setTimeout(function () {
+                   /* setTimeout(function () {
                         window.location = "./dashboard/cards.html";
-                    }, 1000); // apenas para exibir o loading
+                    }, 1000); */// apenas para exibir o loading
 
                 });
 
@@ -156,10 +193,22 @@
         })
 
         return false;
-    }
+    }}
 
     function sumirMensagem() {
         cardErro.style.display = "none"
+    }
+
+    
+    function verSenha() {
+        var inputPass = document.getElementById('ipt_senha2');
+
+
+        if (inputPass.type === 'password') {
+            inputPass.setAttribute('type', 'text')
+        } else {
+            inputPass.setAttribute('type', 'password')
+        }
     }
 
 </script>
