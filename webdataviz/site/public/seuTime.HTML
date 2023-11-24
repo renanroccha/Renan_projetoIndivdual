@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/SeuTime.CSS">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="icon" href="./assets/LogoSantos.png">
+    <title>Seu Time | Santos F.C.</title>
+</head>
+
+<body>
+
+    <div class="header">
+        <h2 class="titulo">Monte seu time </h2>
+    </div>
+
+    <nav id="menuLateral">
+        <div class="container">
+            <p><img class="foto" src="./assets/Renanzinho.jpg"/>
+            <input class = "arquivo" type="file"></p>
+
+            <p>Santos F.C.</p>
+
+            <div class="container-itens">
+                <div class="item">
+                    <a href="dashboard.HTML"><span class="material-symbols-outlined"> monitoring</span>
+                        Estatística</a>
+                </div>
+
+                <div class="item">
+                    <a href="quizDash.HTML"> <span class="material-symbols-outlined">Quiz</span>
+                        Quiz</a>
+                </div>
+
+                <div class="item">
+                    <b><a href="seuTime.HTML"> <span class="material-symbols-outlined">groups</span>
+                            Seu Time!</a></b>
+                </div>
+            </div>
+
+            <div class="buttonSair">
+                <a href="login.html"> <span class="material-symbols-outlined">logout</span>Sair</a>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="imagem">
+    <div class="caixa">
+        <h2>Insira um nome:</h2>
+        <input id="ipt_time" type="text"><br>
+        <button class="buttonTime" onclick="Cadastrar ()">Cadastrar Jogador(a)</button>
+        <div id="div_mensagem"></div><br>
+
+        <h2>Qual time vai ser?</h2>
+        <button class="buttonTime" onclick="sortear ()">Sortear</button><br><br>
+        <div id="div_sorteio"></div><br>
+    </div>
+</div>
+</body>
+    <script>
+
+        var time = []
+
+        function Cadastrar() {
+
+            var times = ipt_time.value
+            time.push(times)
+            div_mensagem.innerHTML = ''
+            ipt_time.value = ''
+
+            // div_mensagem.innerHTML += time[time.length-1]
+
+            for (i = 0; i < time.length; i++) {
+
+                if (i == 0) {
+                    div_mensagem.innerHTML += `GOL - ${time[i]} <img style = "height: 50px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWfHZ6KWzHp7Irg8zKKSB4GA_sTlbNNycnrHiHrWkeOvZcXk4aMTgCDuSH3zjC3zLuEG0&usqp=CAU"> <br>`
+                }
+
+                if (i == 1) {
+                    div_mensagem.innerHTML += `ZAG - ${time[i ]} <img style = "height: 50px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdAc50evE5XW5D7RokwAzeRAzs-OyFO5bjSQ&usqp=CAU"> `
+                }
+                
+                if (i == 2) {
+                    div_mensagem.innerHTML += `ZAG - ${time[i]} <img style = "height: 50px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRK2ZQ38pqG-G0pmdYmXrqnyaK38pGvhNMSgw&usqp=CAU"> <br>`
+                }
+
+                if (i == 3) {
+                    div_mensagem.innerHTML += `LD - ${time[i]} <img style = "height: 50px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX7uW7-SjPZdiGu1-8lfPTUyUBCVFhn-ZXYw&usqp=CAU"> <br>`
+                }
+
+                if (i == 4) {
+                    div_mensagem.innerHTML += `LE - ${time[i]} <img style = "height: 50px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLa6XTWAUmBHHDj9Kda4uIqRF_MzlERIvo1g&usqp=CAU"> <br>`
+                }
+
+                if (i == 5) {
+                    div_mensagem.innerHTML += `VOL - ${time[i]} <img style = "height: 50px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9MvDCHnmnamFHG3UCeu78qL_FCJHTsD80tQ&usqp=CAU"> <br>`
+                }
+
+                if (i == 6) { 
+                    div_mensagem.innerHTML += `MC - ${time[i ]} <img style = "height: 50px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-MkmHp5kVb0F7kavFbpJYoS1lpeLqZLlqHg&usqp=CAU"> `
+                } 
+                
+                if (i == 7) {
+                    div_mensagem.innerHTML += `MC - ${time[i]} <img style = "height: 50px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxEJtLUNV3haSNDOzMT0PVXma14mGTDdyT3w&usqp=CAU"> <br>`
+                }
+
+                if (i == 8) {
+                    div_mensagem.innerHTML += `PTD - ${time[i]} <img style = "height: 50px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9jV8Ta9EMyONrzhXhP6X2sNgHAgkqvSODnQ&usqp=CAU"> <br>`
+                }
+
+                if (i == 9) {
+                    div_mensagem.innerHTML += `PTE - ${time[i]}  <img style = "height: 50px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgLIXf_x67p916u28JDDOfLGVSYrk5Azgzfw&usqp=CAU"> <br>`
+                } 
+
+                if (i == 10) {
+                    div_mensagem.innerHTML += `ATA - ${time[i]}  <img style = "height: 50px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTBRDT7kJ-FIThIUMCe0fHgUYbfq_hYEEvHCg&usqp=CAU"> <br>`
+                }
+                if (i == 11) {
+                    div_mensagem.innerHTML += `TEC - ${time[i]} <img style = "height: 50px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH0fzZZBbuSGZcTln2RCn-KRJ4knRvGPbmwQ&usqp=CAU"> <br>`
+                }
+            }
+        }
+
+
+        function sortear() {
+
+            var max = 10;
+            var min = 0;
+            var intervalo = max - min;
+            var aleatorio = min + Math.random() * intervalo
+
+            if (aleatorio <= 1) {
+                div_sorteio.innerHTML = `<img style = "height: 150px;" src="https://logodetimes.com/times/corinthians/logo-do-corinthians-1536.png">`
+            } 
+            else if (aleatorio <= 2) {
+                div_sorteio.innerHTML = `<img style = "height: 150px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Santos_logo.svg/1045px-Santos_logo.svg.png">`
+            } 
+            else if (aleatorio <= 3) {
+                div_sorteio.innerHTML = `<img style = "height: 150px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Brasao_do_Sao_Paulo_Futebol_Clube.svg/2054px-Brasao_do_Sao_Paulo_Futebol_Clube.svg.png">`
+            }  
+            else if (aleatorio <= 4) {
+                div_sorteio.innerHTML = `<img style = "height: 150px;" src="https://logodownload.org/wp-content/uploads/2016/09/flamengo-logo-escudo-novo.png">`
+
+            }  
+            else if (aleatorio <= 5) {
+                div_sorteio.innerHTML = `<img style = "height: 150px;" src="https://logodownload.org/wp-content/uploads/2016/09/vasco-logo.png">`
+            } 
+             else if (aleatorio <= 6) {
+                div_sorteio.innerHTML = `<img style = "height: 150px;" src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Escudo_Botafogo.png">`
+            }  
+            else if (aleatorio <= 7) {
+                div_sorteio.innerHTML = `<img style = "height: 150px;" src="https://imagepng.org/wp-content/uploads/2018/02/escudo-fluminense-fc-1.png">`
+            }  
+            else if (aleatorio <= 8) {
+                div_sorteio.innerHTML = `<img style = "height: 150px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Avai_FC_%2805-E%29_-_SC.svg/1612px-Avai_FC_%2805-E%29_-_SC.svg.png">`
+            }  
+            else if (aleatorio <= 9) {
+                div_sorteio.innerHTML = `<img style = "height: 150px;" src="https://upload.wikimedia.org/wikipedia/pt/7/7b/Figueirense.png">`
+            }
+            else {
+                div_sorteio.innerHTML = `<img style = "height: 150px;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Palmeiras_logo.svg/768px-Palmeiras_logo.svg.png">`
+            }
+        }
+
+   const image = document.querySelector("img"),
+   input = document.querySelector("input");
+
+   input.addEventListener("change", () => {
+    image.src = URL.createObjectURL(input.files[0]);
+   });
+
+    </script>
