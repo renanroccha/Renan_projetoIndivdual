@@ -220,7 +220,7 @@
     <script>
         var corretas = [2,1,3,1,2,3,2,3,1,2,1,3,2,1,3]
         var opcao = []
-        var qtdCorretas = 0
+        var acertos = 0
 
         function resposta(num_pergunta, selecionada){
             opcao[num_pergunta] = selecionada.value;
@@ -237,14 +237,47 @@
         }
 
         function corrigir() {
-            qtdCorretas = 0;
+            acertos = 0;
              for(i=0; i < corretas.length; i++){
                 if(corretas[i] == opcao[i]){
-                    qtdCorretas++;
+                    acertos++;
                 }
              }
-             document.getElementById("resultado").innerHTML = qtdCorretas
-        }
+
+             document.getElementById("resultado").innerHTML = acertos
+
+
+var idUsuario = sessionStorage.getItem("ID_USUARIO");;
+
+fetch("/usuarios/cadastrarPontuacao", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    pontuacao: acertos,
+    idUsuario: idUsuario,
+  }),
+})
+  .then(function (resposta) {
+    console.log("resposta: ", resposta);
+    if (resposta.ok) {
+
+      setTimeout(() => {
+        window.location = "quizDash.HTML";
+
+      }, "5000");
+    } else {
+      throw "Houve um erro ao tentar realizar o cadastro!";
+    }
+  })
+  .catch(function (resposta) {
+    console.log(`#ERRO: ${resposta}`);
+  });
+
+return false;
+}
+
 
    const image = document.querySelector("img"),
    input = document.querySelector("input");

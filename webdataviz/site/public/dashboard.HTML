@@ -127,7 +127,49 @@
               }
             }
           });
-  
+         
+
+          function dado() {
+        dados.style.display = 'block'
+        analytics.style.display = 'none'
+    }
+
+    async function anali() {
+        dados.style.display = 'none'
+        analytics.style.display = 'block'
+        var idUsuario = sessionStorage.ID_Usuario
+
+        var resultado = await fetch("/dashboard/pegarDadosQuiz", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                idUsuarioServer: idUsuario,
+            }),
+        });
+
+        const resposta = await resultado.json();
+
+        tHtml.innerHTML = resposta.tentativaQuizHtml
+        // tCss.innerHTML = resposta.tentativaQuizCss
+        // tTotal.innerHTML = resposta.totalQuizRealizado
+        
+        var resultadoDashboard = await fetch("/dashboard/pegarDadosQuiz", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                idUsuarioServer: idUsuario,
+            }),
+        });
+
+        var response = await resultadoDashboard.json();
+
+        onUpdateChartHtml(response);
+        // onUpdateChartCSS(response);
+    }
 
    const image = document.querySelector("img"),
    input = document.querySelector("input");

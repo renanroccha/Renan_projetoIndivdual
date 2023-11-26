@@ -22,7 +22,16 @@ function cadastrar(nome, email, regiao, senha) {
     return database.executar(instrucao);
 }
 
+function cadastrarPontuacao(idUsuario,pontuacao) {
+    var instrucao = `INSERT INTO pontuacao (fkUsuario, pontuacao) VALUES ('${idUsuario}', '${pontuacao}');`;
+
+
+    return database.executar(instrucao);
+}
+
+
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    cadastrarPontuacao
 };

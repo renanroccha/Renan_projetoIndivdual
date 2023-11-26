@@ -80,9 +80,26 @@ function cadastrar(req, res) {
                 }
             );
     }
+               
 
+    function cadastrarPontuacao(req, res) {
+        const { pontuacao, idUsuario } = req.body;
+    
+        usuarioModel.cadastrarPontuacao(idUsuario, pontuacao)
+            .then(() => {
+                res.status(200).json();
+            }).catch((erro) => {
+                console.log(erro);
+                console.log(
+                    "\nHouve um erro ao realizar o cadastro! Erro: ",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage);
+            });
+    }
 
 module.exports = {
     autenticar,
-    cadastrar
+    cadastrar,
+    cadastrarPontuacao
 }
