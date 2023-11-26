@@ -140,15 +140,7 @@
     align-items: center;
     margin-top: 5%;
   }
-  .recuperarSenha{
-    width: 100%;
-    height: 5%;
-    /* border: yellow solid 2px; linha guia da div */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-  }
+
   #alerta_email{
     width: 100%;
     height: 5%;
@@ -159,6 +151,7 @@
     align-items: center;
     text-align: center;
   }
+
   #alerta_senha{
     width: 100%;
     height: 10%;
@@ -170,10 +163,8 @@
     align-items: center;
     text-align: center;
   }
-  .link{
-    text-decoration: none;
-    color: black;
-  }
+
+  
   
   #botaoVerSenha{
     position: relative;
@@ -199,6 +190,7 @@
     border-radius: 5px;
     font-size: 15px;
     border: none;
+    cursor: pointer;
   }
   
   

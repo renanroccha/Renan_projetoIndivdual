@@ -227,10 +227,7 @@
     align-items: center;
     text-align: center;
   }
-  .link{
-    text-decoration: none;
-    color: black;
-  }
+  
   
   #botaoVerSenha{
     position: relative;
@@ -266,6 +263,7 @@
     border-radius: 5px;
     font-size: 15px;
     border: none;
+    cursor: pointer;
   }
   
   

@@ -50,7 +50,7 @@
     <div class="fundo">
 
     <div class="tituloo">
-        <h1>Média de Acertos</h1>
+        <h1>Total de Acertos</h1>
        </div>
     <div class="conteinerr">
       <div class="grafico">
@@ -128,31 +128,6 @@
             }
           });
   
-          const ctx2 = document.getElementById('myChart2');
-          
-        
-          new Chart(ctx2, {
-            type: 'doughnut',
-            data: {
-              labels: ['Sul', 'Sudeste', 'Centro-Oeste', 'Norte', 'Nordeste'],
-              datasets: [{
-                label: 'Média',
-                backgroundColor:['blue', 'yellow', 'red', 'green', 'brown'],
-                borderColor: 'black',
-                data: [20, 42, 18, 8, 10],
-                borderWidth: 1
-              } , 
-            
-          ]
-            },
-            options: {
-              scales: {
-                y: {
-                  beginAtZero: true
-                }
-              }
-            }
-          });
 
    const image = document.querySelector("img"),
    input = document.querySelector("input");

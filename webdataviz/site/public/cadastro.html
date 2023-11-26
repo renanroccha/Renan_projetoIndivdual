@@ -154,7 +154,7 @@
       validacao = 1;
     }
 
-    if (regiao.indexOf("Sul") && regiao.indexOf("Sudeste") && regiao.indexOf("Centro-Oeste") && regiao.indexOf("Norte") && regiao.indexOf("Nordeste")) {
+    if (regiao.indexOf("Sul") == -1 && regiao.indexOf("Sudeste") == -1 && regiao.indexOf("Centro-Oeste") == -1 && regiao.indexOf("Norte") == -1 && regiao.indexOf("Nordeste") == -1) {
       alerta_regiao.innerHTML = `Selecione a sua região`
       validacao = 1;
     }
