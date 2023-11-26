@@ -29,9 +29,15 @@ function cadastrarPontuacao(idUsuario,pontuacao) {
     return database.executar(instrucao);
 }
 
+   /*function adicionarFotoPerfil(caminho, idUsuario) {
+    const instrucao = `INSERT INTO foto (caminho, fkUsuario) VALUES ('${caminho}', '${idUsuario}')`;
+      
+    return database.executar(instrucao);
+}*/
 
 module.exports = {
     autenticar,
     cadastrar,
     cadastrarPontuacao
+    //adicionarFotoPerfil
 };

@@ -1,6 +1,7 @@
 var usuarioModel = require("../models/usuarioModel");
 var aquarioModel = require("../models/aquarioModel");
 
+
 function autenticar(req, res) {
     var email = req.body.emailServer;
     var senha = req.body.senhaServer;
@@ -98,8 +99,28 @@ function cadastrar(req, res) {
             });
     }
 
+   /* async function adicionarFotoPerfil(req, res) {
+        const { idUsuario } = req.params;
+    
+        try {
+            if (req.file) {
+                const caminho = req.file.path;
+    
+                await usuarioModel.adicionarFotoPerfil(idUsuario, caminho);
+                res.json({ mensagem: "Foto de perfil adicionada com sucesso" });
+            } else {
+                res.status(400).json({ error: "Nenhum arquivo de foto enviado" });
+            }
+        } catch (erro) {
+            console.error("Erro ao adicionar foto de perfil:", erro);
+            res.status(500).json(erro);
+        }
+    }*/
+    
+
 module.exports = {
     autenticar,
     cadastrar,
     cadastrarPontuacao
+   // adicionarFotoPerfil
 }

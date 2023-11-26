@@ -16,4 +16,9 @@ router.post("/cadastrarPontuacao", function (req, res) {
     usuarioController.cadastrarPontuacao(req, res);
 });
 
+/*router.post("/adicionar-foto",  function (req, res) { 
+    usuarioController.adicionarFotoPerfil(req, res);
+});*/
+
+
 module.exports = router;
