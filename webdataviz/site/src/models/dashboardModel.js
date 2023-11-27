@@ -12,7 +12,10 @@ function resultadoQuiz(acertos, fkUsuario) {
 
 async function pegarDadosQuiz(idUsuario) {
     var pegarDadosQuiz = `
-    SELECT pontuacao as Pontuação FROM pontuacao where fkUsuario = ${idUsuario};`;
+    SELECT regiao, SUM(pontuacao.pontuacao) AS soma_pontuacao
+    FROM usuario
+    JOIN pontuacao ON usuario.idUsuario = pontuacao.fkUsuario
+    GROUP BY regiao; = ${idUsuario};`;
     
     var pegarDadosQuiz = await database.executar(pegarDadosQuiz);
     

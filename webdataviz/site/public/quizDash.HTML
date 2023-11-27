@@ -277,7 +277,19 @@ fetch("/usuarios/cadastrarPontuacao", {
 
 return false;
 }
+   
+const onUpdateChartHtml = ({ dadosQuizHtml }) => {
+        var labels = dadosQuizHtml.map((args, index) => `Tentativa - ${index + 1}`)
 
+        var acertos = dadosQuizHtml.map(args => args.acertos);
+        // var errosHtml = dadosQuizHtml.map(args => args.qtdErrosHtml);
+
+        dataDashboardHtml.labels = labels;
+        dataDashboardHtml.datasets[0].data = acertos;
+        // dataDashboardHtml.datasets[1].data = errosHtml;
+
+        htmlChart.update();
+    };
 
    const image = document.querySelector("img"),
    input = document.querySelector("input");
