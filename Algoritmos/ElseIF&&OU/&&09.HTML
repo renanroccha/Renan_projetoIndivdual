@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    Altura Inicial: <input id="ipt_inicial" type="number"><br>
+    Altura Final: <input id="ipt_final" type="number"> <br><br>
+
+    Seu Nome: <input id="ipt_nome" type="text"><br>
+    Sua Altura: <input id="ipt_altura" type="number"><br>
+
+    <button onclick="piloto ()"> Conferir </button>
+    <div id="div_mensagem"></div>
+
+
+</body>
+
+</html>
+
+<script>
+
+    function piloto() {
+
+        var inicial = Number(ipt_inicial.value);
+        var final = Number(ipt_final.value);
+
+        var nome = ipt_nome.value;
+        var altura = Number(ipt_altura.value);
+
+        if (inicial > 1 && final > inicial) {
+
+            if (altura > inicial && altura < final) {
+                div_mensagem.innerHTML = `O candidato ${nome} com altura de ${altura} participará do processo de seleção de piloto`
+            }
+            else { div_mensagem.innerHTML =`Infelizmente o candidato ${nome} com altura de ${altura} não atende os requisitos` }
+
+        } else { alert`Não Seguir em frente` }
+
+
+    }
+</script>

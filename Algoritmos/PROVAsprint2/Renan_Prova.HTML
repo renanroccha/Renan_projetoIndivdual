@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    Chakra <input id="ipt_pontos" type="number"> <br>
+    Quantidade de clone: <input id="ipt_clones" type="number"> <br>
+    Quantidade de clones por linha:<input id="ipt_linhas" type="number"> <br>
+
+    <button onclick="naruto ()"> Criar Clones </button>
+
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function naruto() {
+
+        var pontos = Number(ipt_pontos.value);
+        var clones = Number(ipt_clones.value);
+        var linhas = Number(ipt_linhas.value);
+        var sobra = pontos - clones * 20;
+        var dividir = sobra / pontos * 100
+        var contagem = 0;
+
+
+        if ((pontos >= 20 && pontos <= 5000)(clones >= 0 && clones <= 250) && (linhas > 0)) {
+            if (pontos >= clones * 20) {
+            } else {
+                div_mensagem.innerHTML = `ERRO - Quantidade de clones insuficiente`
+            }
+        } else {
+            div_mensagem.innerHTML = ` “ERRO NA ENTRADA DE DADOS – Energia tem que ser entre 20 e 5.000. Quantidade de Clones tem que ser entre 0 e 250. Quantidade de Clones por linha tem que ser maior que 0”.`
+        }
+
+        while (contagem < clones) {
+
+            contagem += 1;
+
+            div_mensagem.innerHTML += `
+            <img style="width: 100px;" src="naruto.png"> <br>`
+
+
+            div_mensagem.innerHTML =
+
+`ANÁLISE DA GERAÇÃO DE CLONES
+
+Chakra Inicial: ${pontos}
+
+Quantidade de Clones: ${clones}
+
+Sobra de Chakra: ${sobra}`
+
+        }
+
+        if (sobra > 1000 || clones > 50 && (dividir >= 0.20)) {
+            div_mensagem.innerHTML = `“PROVAVELMENTE VOCÊ VAI GANHAR`
+        }
+        else if (dividir > 500 || clones >= 20 && clones <= 50 && (dividir >= 0.20)) { div_mensagem.innerHTML = `LUTA VAI SER MUITO BOA` }
+        else { div_mensagem.innerHTML = `TORÇA PARA O ADVERSÁRIO SER FRAQUINHO` }
+    }
+
+
+</script>

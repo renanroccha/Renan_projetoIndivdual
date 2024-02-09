@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+macarons<input  id="ipt_macarons" type="number"><br>
+brigadeiros<input  id="ipt_brigadeiros" type="number"><br>
+cupcakes<input  id="ipt_cupcakes" type="number"><br>
+cheesecake<input  id="ipt_cheesecakes" type="number"><br>
+valor macarons<input id="ipt_valor-macarons" type="number"><br>
+valor brigadeiros<input  id="ipt_valor-brigadeiros" v><br>
+valor cupcakes<input  id="ipt_valor-cupcakes" type="number"><br>
+valor cheesecakes<input  id="ipt_valor-cheesecakes" type="number"><br>
+
+<button type="button" onclick="calcular ()">Verificar Vendas</button>
+
+<div id="div_mensagem"></div>
+<div id="div_total"></div>
+
+    
+</body>
+</html>
+
+<script>
+    
+    function calcular () {
+
+      var macarons = Number(ipt_macarons.value);
+      var brigadeiros = Number(ipt_brigadeiros.value);
+      var cupcakes = Number(iptcupcakes.value);
+      var cheesecakes = Number(ipt_cheesecakes.value);
+    
+      var valorMacarons = Number(ipt_valor-macarons.value);
+      var valorBrigadeiros = Number(ipt_valor-brigadeiros.value);
+      var valorCupcakes = Number(ipt_valor-cupcakes.value);
+      var valorCheesecakes = Number(ipt_valor-cheesecakes.value);
+    
+      if (macarons < 0 || brigadeiros < 0 || cupcakes < 0 || cheesecakes < 0 || valorMacarons < 0 || valorBrigadeiros < 0 || valorCupcakes < 0 || valorCheesecakes < 0) {
+        alert('Por favor, insira valores não negativos.');
+      }
+    
+      var lista = div_mensagem.innerHTML;
+      div_mensagem.innerHTML = '';
+      var total = 0;
+      var contagem = 1;
+      var texto = '';
+    
+      while (macarons > 0 || brigadeiros > 0 || cupcakes > 0 || cheesecakes > 0) {
+      if (macarons > 0) {
+        div_mensagem.innerHTML += 'Venda ' + contagem + ' - <img style="width: 100px;" src="https://static.itdg.com.br/images/1200-675/06edb6a571a067e7c6029dbde006d1b5/275301-original.jpg"> - R$' + valorMacarons + '<br>';
+
+        total += valorMacarons;
+        macarons--;
+        contagem++;
+      }
+    
+      if (brigadeiros > 0) {
+        div_mensagem.innerHTML += 'Venda ' + contagem + ' - <img style="width: 100px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGGPvry6Eqy_0yLV37gr8IaH0fB7orUZNzhQ&usqp=CAU"> - R$' + valorBrigadeiros + '<br>';
+
+        total += valorBrigadeiros;
+        brigadeiros--;
+        contagem++;
+      }
+    
+      if (cupcakes > 0) {
+        div_mensagem.innerHTML += 'Venda ' + contagem + ' - <img style="width: 100px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuD3pXhliweiItXfftAzzLzOSX5FJj27l7Vw&usqp=CAU"> - R$' + valorCupcakes + '<br>';
+
+        total += valorCupcakes;
+        cupcakes--;
+        contagem++;
+      }
+    
+      if (cheesecakes > 0) {
+        div_mensagem.innerHTML += 'Venda ' + contagem + ' - <img style="width: 100px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb30LlZtVGo-uSxATUgvR3_2fk7hL3PFta0A&usqp=CAU"> - R$' + valorCheesecakes + '<br>';
+        total += valorCheesecakes;
+        cheesecakes--;
+        contagem++;
+      }
+      }
+      texto = 'Com a quantidade de ' + macarons + ' Macarons, ' + brigadeiros + ' Brigadeiros, ' + cupcakes + ' Cupcakes e ' + cheesecakes + ' Cheesecakes, a venda totalizará R$' + total;
+
+      div_total.innerHTML = texto;
+    }
+    </script>
+    

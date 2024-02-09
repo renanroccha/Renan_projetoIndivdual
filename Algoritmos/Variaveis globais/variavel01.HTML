@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<img id="img_cr7" style="width: 100px;" src="https://media.seudinheiro.com/uploads/2021/07/Cristiano-Ronaldo-Coca-Cola.jpg" alt="Cristiano Ronaldo segurando uma coca">
+
+
+<br><br>
+
+<button onclick="aumentar()"> Aumentar largura </button>
+<button onclick="reduzir()"> Reduzir largura </button>
+
+
+</body>
+</html>
+
+<script>
+    var largura = 100
+    
+
+function aumentar(){
+    largura = largura + 10;
+    img_cr7.style.width = largura + "px"
+}
+
+function reduzir(){
+    largura = largura - 10;
+    img_cr7.style.width = largura + "px"
+}
+
+
+</script>

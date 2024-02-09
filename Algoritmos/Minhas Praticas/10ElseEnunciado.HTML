@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brasileirão 2023</title>
+</head>
+
+<body background="https://logospng.org/wp-content/uploads/brasileirao-serie-a.png">
+
+    Time:     <input id="ipt_time" type="text"> <br>
+    Vitorias: <input id="ipt_vitoria" type="number"> <br>
+    Empates:  <input id="ipt_empate" type="number"> <br>
+    Derrotas: <input id="ipt_derrota" type="number"> <br>
+
+    <button onclick="Resultado ()"> Classificação Final </button>
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function Resultado() {
+
+        var Time = ipt_time.value;
+        var Vitoria = Number(ipt_vitoria.value) * 3;
+        /* var valorV = Vitoria * 3; */
+        var Empate = Number(ipt_empate.value);
+        /* var valorE = Empate + 1; */
+        var Derrota = Number(ipt_derrota.value);
+        /* var valorD = Derrota = 0; */
+        var Pontos = Vitoria + Empate;
+
+
+        if (Pontos >= 75) {
+            div_mensagem.innerHTML = `O ${Time} É CAMPEÃO BRASILEIRO DE 2023!!! PARABÉNS COM INCRÍVEIS ${Pontos} PONTOS.`
+        }
+
+
+        if (Pontos > 0) {
+            if (Pontos < 45) { div_mensagem.innerHTML = `O ${Time} Vascouuu teve ${Pontos} pontos e está rebaixado para a Serie B.` }
+
+        }
+        if (Pontos <= 53) {
+            if (Pontos >= 45) { div_mensagem.innerHTML = `O ${Time} teve ${Pontos} Pontos e está salvo do rebaixamento.` }
+
+        }
+        if (Pontos <= 65) {
+            if (Pontos > 53) { div_mensagem.innerHTML = `Parabéns ao ${Time} teve ${Pontos} Pontos e está classificado para a Sul-americana.` }
+        }
+        else {
+            if (Pontos > 65) {
+                if (Pontos < 75) { div_mensagem.innerHTML = `Parabéns ao ${Time} teve ${Pontos} Pontos e está classificado para a Libertadores da América.` }
+            }
+        }
+
+    }
+
+</script>

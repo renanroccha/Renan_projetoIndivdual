@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUZ</title>
+</head>
+<body>
+  
+   KWH: <input id="ipt_kwh" type="text"> <br>
+    <button onclick="contaDeLuz ()">Calcular Conta de Luz</button>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+function contaDeLuz() {
+
+var valorKWH = 0.85;
+var KWHconsumidos = Number (ipt_kwh.value);
+var valor = KWHconsumidos * valorKWH;
+
+
+if (KWHconsumidos <100) {
+     valor *= 0.9; // Aplica desconto de 10% se consumir menos de 100 KWh
+
+} 
+
+    alert ("Valor da conta a ser paga: R$" + valor)
+
+}
+
+</script>

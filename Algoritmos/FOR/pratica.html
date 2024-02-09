@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome do astronauta: <input id="ipt_nome" type="text"> <br>
+    Quantidade de dias: <input id="ipt_dias" type="number"> <br>
+    Quantidade de horas: <input id="ipt_horas" type="number"> <br>
+    Quantidade de minutos: <input id="ipt_minutos" type="number"> <br>
+    <button onclick="interestelar()">Registrar viagem</button>
+    <button onclick="relatorio()">Relatório de Viagens</button>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+    listaAstronauta = [];
+    listaViagensDias = [];
+    listaViagensHoras = [];
+    listaViagensMinutos = [];
+    listaViagemTotal = [];
+    
+    function interestelar(){
+        div_mensagem.innerHTML = ``;
+        var dias = Number(ipt_dias.value);
+        var horas = Number(ipt_horas.value);
+        var minutos = Number(ipt_minutos.value);
+        diasEmMinuto = 1440 * dias;
+        horasEmMinuto = 60 * horas;
+        minutosTotais = diasEmMinuto + horasEmMinuto + minutos
+
+    if(dias > 0 || horas > 0 || minutos > 0){
+        listaViagensDias.push(diasEmMinuto);
+        listaViagensHoras.push(horasEmMinuto);
+        listaViagensMinutos.push(minutos);
+        for(var i = 0; i < listaViagensDias.length;i++){
+            
+        }
+        for(var i = 0; i < listaViagensHoras.length;i++){
+            
+        }
+        for(var i = 0; i < listaViagensMinutos.length;i++){
+            
+        }
+        
+
+    }
+    else{
+        alert("Informe um tempo de viagem válido!")
+    }
+    }
+    function relatorio(){
+        var nome = ipt_nome.value;
+        
+        var dias = Number(ipt_dias.value);
+        var horas = Number(ipt_horas.value);
+        var minutos = Number(ipt_minutos.value);
+        var viagens = listaViagensMinutos.length;
+        anosTotais = minutosTotais / 525600;
+        listaAstronauta.push(nome);
+
+        div_mensagem.innerHTML += `Foram registradas ${viagens} viagens, detalhes a seguir:<br>`
+        
+        div_mensagem.innerHTML = ``;
+
+        
+
+        for(var j = 0; i < listaViagemTotal;j++){
+            var total = listaViagemTotal[i]
+        }
+        
+        for(var i = 0; i < listaAstronauta.length;i++){
+            var nomeAtual = listaAstronauta[i]
+            div_mensagem.innerHTML += `Astronauta ${nomeAtual} ficou fora por pelo menos ${anosTotais} anos no tempo da Terra.<br>
+            Viagem ${i+1}:<br>`
+            if(anosTotais <= 13){div_mensagem.innerHTML += `A criança que nasceu quando ele saiu provavelmente está assim:<br> <img src="crianca.png"><br>`}
+            else if(anosTotais > 13 && anosTotais <= 30){div_mensagem.innerHTML += `A criança que nasceu quando ele saiu provavelmente está assim:<br> <img src="adolescente.png">`}
+            else if(anosTotais > 30 && anosTotais <= 65){div_mensagem.innerHTML += `A criança que nasceu quando ele saiu provavelmente está assim:<br> <img src="adulto.png">`}
+            else if(anosTotais > 65 && anosTotais <= 100){div_mensagem.innerHTML += `A criança que nasceu quando ele saiu provavelmente está assim:<br> <img src="idoso.png">`}
+            else if(anosTotais > 100){div_mensagem.innerHTML += `A criança que nasceu quando ele saiu provavelmente está assim:<br> <img src="esqueleto.png">`}
+        }
+       
+    }
+</script>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tênis Clube SPTECH</title>
+    <style>
+        body {
+            display: flex;
+            align-items: stretch;
+        }
+
+        body div:first-child,
+        body div:nth-of-type(2) {
+            padding: 8px;
+            border: 2px solid rgba(0, 0, 0, 0.2);
+        }
+
+        body div:nth-of-type(2) {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <label for="input_qtd_partidas">
+            Rodadas máximas:
+            <input id="input_qtd_partidas" /><br />
+        </label>
+
+        <button onclick="realizar_partida()">Realizar partida</button>
+
+        <h3>Informe as partidas que deseja relembrar</h3>
+
+        <label for="input_inicio_intervalo">Início:</label>
+        <input id="input_inicio_intervalo" />
+        <label for="input_fim_intervalo">Fim:</label>
+        <input id="input_fim_intervalo" />
+
+        <button onclick="relembrar_partidas()">Relembrar</button>
+    </div>
+    <div>
+        <h3>Painel</h3>
+        <div id="div_painel"></div>
+    </div>
+</body>
+
+</html>
+<script>
+
+    var rodada = [];
+
+    function realizar_partida() {
+
+        var maximo = input_qtd_partidas.value
+        var jogador1
+        var jogador2
+        var max1 = 10
+        var min1 = 0
+        var intervalo1 = max1 - min1
+        var aleatorio1 = min1 + Math.random() * intervalo1
+        var max2 = 10
+        var min2 = 0
+        var intervalo2 = max2 - min2
+        var aleatorio2 = min2 + Math.random() * intervalo2
+        var total = aleatorio1 + aleatorio2;
+        rodada.push(maximo)
+
+        if (maximo > 0) {
+        }
+        else { alert("Por favor, informe um número válido de rodadas."); }
+
+        if (maximo < rodada) {
+
+        }
+
+        else { alert("Número de partidas excedido") }
+
+        for (var i = 1; i <= rodada; i++) {
+            div_painel.innerHTML += `Rodada ${rodada.length[i]} Jogador1 ${aleatorio1.toFixed(0)} jogador2 ${aleatorio2.toFixed(0)} Total${total.toFixed(0)}<br>`
+        }
+
+    }
+
+
+
+
+    function relembrar_partidas() {
+
+        var de = input_inicio_intervalo.value
+        var ate = input_fim_intervalo.value
+
+        if (de == "" || ate == "") {
+            alert("informe intervalos válidos.");
+        }
+
+        var inicio = parseInt(de);
+        var fim = parseInt(ate);
+
+
+        var partidas = (inicio - 1, fim)
+        if (inicio < fim)
+            div_painel.innerHTML += `${partidas}`
+    }
+
+
+
+
+</script>

@@ -1,0 +1,17 @@
+-- Não consegui desafiar ninguém infelizmente, mas fiz o enunciado e o código.
+
+
+Crie um programa:
+
+Brasileirão 2023 inserir uma logo do Brasileirão como tela de fundo, insira o campo: Time, Vitoria, empate e derrota onde vai adicionar o nome do time e os jogos e ter o resultado da pontuação, lembrando que vitoria vale 3, empate vale 1 e derrota 0, ao clicar no botão resultado
+devera apresentar as seguintes situações:
+
+se a pontuação for entre maior ou igual que 0 e menor que 45 exibir: O "Time" Vascouuu teve "Resultado" pontos e está rebaixado para a Serie B.
+ou
+se a pontuação for entre maior ou igual á 45 e menor ou igual á 53 exibir: O "Time" teve "Resultado" Pontos e está salvo do rebaixamento.
+ou
+se a pontuação for entre maior que 53 e menor ou igual a 65 exibir: Parabéns ao "Time" teve "Resultado" Pontos e está classificado para a Sul-americana.
+ou
+se a pontuação for entre maior que 65 e menor que 75 Exibir: Parabéns ao "Time" teve "Resultado" Pontos e está classificado para a Libertadores da América.
+Se não
+caso contrario exibir: O "Time" É CAMPEÃO BRASILEIRO DE 2023!!! PARABÉNS COM INCRÍVEIS "resultado" PONTOS.

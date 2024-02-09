@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    bairro: <input id="ipt_bairro" type="text"><br>
+    numero: <input id="ipt_numero" type="number"><br>
+
+    <button onclick="moradia ()">Relembrar moradia</button><br>
+    <button onclick="cadastrar ()">Cadastrar</button><br>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+   var comunidade = []
+
+   function cadastrar (){
+    var bairro = ipt_bairro.value;
+    comunidade.push(bairro)
+    ipt_bairro.value = ``;
+
+   }
+
+
+       
+   function moradia () {
+
+    var numero = ipt_numero.value;
+     
+    if(numero >=1 && numero <= comunidade.length){
+    div_mensagem.innerHTML = `${comunidade[numero - 1]}`}
+    else{div_mensagem.innerHTML = `Você ainda não morou num ${numero}º bairro`}
+    
+   }
+
+
+</script>

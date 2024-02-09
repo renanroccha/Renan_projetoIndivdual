@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Nota 1: <input id="ipt_nota1" type="text"><br>
+    Nota 2: <input id="ipt_nota2" type="text"><br>
+    <button onclick="Avaliar ()"> Avaliar</button>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script> function Avaliar() {
+
+    var nota01 = Number (ipt_nota1.value);
+    var nota02 = Number (ipt_nota2.value);
+    var total = (nota01+nota02)/2;
+
+    alert ("A média é " + total);
+
+    if   (total >6) {
+          div_mensagem.innerHTML = "Parabéns Aprovado"; 
+
+    } else {div_mensagem.innerHTML = "Não é maior que 6"}
+
+    if   (total <6) {
+          div_mensagem.innerHTML = "Você foi reprovado";
+          
+    } else {div_mensagem.innerHTML = "Não é menor que 6"}
+
+
+    if   (total ==6) {
+          div_mensagem.innerHTML = "Quase Reprova";
+    }
+}
+
+</script>

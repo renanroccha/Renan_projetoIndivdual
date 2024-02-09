@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        #historico {
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        var numeros = [];
+
+        function analisarHistorico() {
+            var numeroDigitado = parseInt(document.getElementById('numero').value);
+
+            if (!isNaN(numeroDigitado)) {
+                numeros.push(numeroDigitado);
+                atualizarHistorico();
+            } else {
+                alert('Por favor, digite um número válido.');
+            }
+        }
+
+        function atualizarHistorico() {
+            var historicoTexto = '';
+
+            for (var i = 0; i < numeros.length; i++) {
+                historicoTexto += (i + 1) + 'º Número: ' + numeros[i] + '<br>';
+            }
+
+            var maior = Math.max(...numeros);
+            var menor = Math.min(...numeros);
+
+            historicoTexto += '<br>Maior: ' + maior + '<br>';
+            historicoTexto += 'Menor: ' + menor;
+
+            document.getElementById('historico').innerHTML = historicoTexto;
+        }
+    </script>
+</head>
+<body>
+    <h1>Análise de Números</h1>
+
+    <input type="number" id="numero" placeholder="Digite um número">
+    <button onclick="analisarHistorico()">Analisar histórico</button>
+
+    <div id="historico"></div>
+</body>
+</html>

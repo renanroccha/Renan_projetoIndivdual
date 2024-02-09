@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa de Alunos</title>
+</head>
+<body>
+
+    <h1>Interface gráfica do usuário</h1>
+
+    <!-- Parte-1 -->
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" placeholder="Digite o nome">
+
+    <label for="ac1">AC-1:</label>
+    <input type="number" id="ac1" placeholder="Digite a nota da AC-1" min="0" max="10">
+
+    <label for="ac2">AC-2:</label>
+    <input type="number" id="ac2" placeholder="Digite a nota da AC-2" min="0" max="10">
+
+    <label for="ac3">AC-3:</label>
+    <input type="number" id="ac3" placeholder="Digite a nota da AC-3" min="0" max="10">
+
+    <button onclick="cadastrarNotas()">Cadastrar Notas</button>
+
+    <!-- Parte-2 -->
+    <label for="de">De:</label>
+    <input type="number" id="de" placeholder="0" min="0" max="10">
+    
+    <label for="ate">Até:</label>
+    <input type="number" id="ate" placeholder="10" min="0" max="10">
+
+    <button onclick="pesquisar()">Pesquisar Todas as Notas</button>
+
+    <label for="notaSelecionada">Nota a Pesquisar:</label>
+    <input type="number" id="notaSelecionada" placeholder="Digite a nota a pesquisar" min="0" max="10">
+
+    <button onclick="pesquisarNotaSelecionada()">Pesquisar Nota Selecionada</button>
+
+    <h2>Resultado da Pesquisa:</h2>
+    <ul id="lista-resultados"></ul>
+
+    <h3>Resumo:</h3>
+    <p>Total de alunos registrados: <span id="total-registrados">0</span></p>
+    <p>Total de alunos listados: <span id="total-listados">0</span> (com nota no intervalo informado)</p>
+    <p>Maior Nota: <span id="maior-nota">0</span></p>
+    <p>Menor Nota: <span id="menor-nota">0</span></p>
+    <p>Média da Nota: <span id="media-nota">0</span></p>
+
+    <script>
+        var registros = [];
+
+        function cadastrarNotas() {
+            var nome = document.getElementById('nome').value;
+            var ac1 = parseFloat(document.getElementById('ac1').value);
+            var ac2 = parseFloat(document.getElementById('ac2').value);
+            var ac3 = parseFloat(document.getElementById('ac3').value);
+
+            if (!nome || isNaN(ac1) || isNaN(ac2) || isNaN(ac3) || ac1 < 0 || ac1 > 10 || ac2 < 0 || ac2 > 10 || ac3 < 0 || ac3 > 10) {
+                alert('Por favor, preencha todos os campos corretamente.');
+                return;
+            }
+
+            var dados = { nome: nome, ac1: ac1, ac2: ac2, ac3: ac3 };
+            registros.push(dados);
+            exibirResumo();
+        }
+
+        function pesquisar() {
+            var de = parseFloat(document.getElementById('de').value);
+            var ate = parseFloat(document.getElementById('ate').value);
+
+            if (isNaN(de) || isNaN(ate) || de < 0 || de > 10 || ate < 0 || ate > 10 || de > ate) {
+                alert('Por favor, insira um intervalo de pesquisa válido.');
+                return;
+            }
+
+            var alunosFiltrados = registros.filter(function(aluno) {
+                return aluno.ac1 >= de && aluno.ac1 <= ate ||
+                       aluno.ac2 >= de && aluno.ac2 <= ate ||
+                       aluno.ac3 >= de && aluno.ac3 <= ate;
+            });
+
+            exibirResultados(alunosFiltrados);
+            exibirResumo(alunosFiltrados);
+        }
+
+        function pesquisarNotaSelecionada() {
+            var notaSelecionada = parseFloat(document.getElementById('notaSelecionada').value);
+
+            if (isNaN(notaSelecionada) || notaSelecionada < 0 || notaSelecionada > 10) {
+                alert('Por favor, insira uma nota válida para pesquisar.');
+                return;
+            }
+
+            var alunosFiltrados = registros.filter(function(aluno) {
+                return aluno.ac1 === notaSelecionada || aluno.ac2 === notaSelecionada || aluno.ac3 === notaSelecionada;
+            });
+
+            exibirResultados(alunosFiltrados);
+            exibirResumo(alunosFiltrados);
+        }
+
+        function exibirResultados(alunos) {
+            var listaResultados = document.getElementById('lista-resultados');
+            listaResultados.innerHTML = '';
+
+            alunos.forEach(function(aluno) {
+                var item = document.createElement('li');
+                item.textContent = aluno.nome + ' - AC-1: ' + aluno.ac1 + ', AC-2: ' + aluno.ac2 + ', AC-3: ' + aluno.ac3;
+                listaResultados.appendChild(item);
+            });
+        }
+
+        function exibirResumo(alunos) {
+            document.getElementById('total-registrados').textContent = registros.length;
+            document.getElementById('total-listados').textContent = alunos.length;
+
+            if (alunos.length > 0) {
+                var todasNotas = alunos.flatMap(function(aluno) {
+                    return [aluno.ac1, aluno.ac2, aluno.ac3];
+                });
+
+                document.getElementById('maior-nota').textContent = Math.max(...todasNotas);
+                document.getElementById('menor-nota').textContent = Math.min(...todasNotas);
+
+                var media = todasNotas.reduce(function(sum, nota) {
+                    return sum + nota;
+                }, 0) / todasNotas.length;
+
+                document.getElementById('media-nota').textContent = media.toFixed(1);
+            } else {
+                document.getElementById('maior-nota').textContent = 0;
+                document.getElementById('menor-nota').textContent = 0;
+                document.getElementById('media-nota').textContent = 0;
+            }
+        }
+    </script>
+
+</body>
+</html>

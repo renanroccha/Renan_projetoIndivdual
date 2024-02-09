@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input id="ipt_numero" type="number">
+    <button onclick="ver ()">ver </button>
+    <div id="div_mensagem"></div>
+   
+
+</body>
+</html>
+
+<script>
+   
+   function ver () {
+    
+    var numero = Number(ipt_numero.value)
+
+    if(numero >= 10 && numero <=500){
+        var soma = 0;
+        var pares = '';
+
+        for(var i = 0; i <= numero; i++){
+            if (i % 2 == 0){
+                if(pares !== ``){
+                    pares += `<br>`
+                }
+                pares += 1;
+                soma += 1;
+            }
+        }
+        div_mensagem.innerHTML += `Numeros pares <br> ${pares} <br>`
+        div_mensagem.innerHTML += `soma dos numeros pares ${soma}`
+    }
+     else{
+        alert("O número deve estar entre 10 e 500")
+     }
+
+
+
+   }
+
+
+
+</script>

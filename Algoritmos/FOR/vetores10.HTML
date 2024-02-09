@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Linha: <input id="ipt_linha" type="text"><br>
+    <button onclick="gravar ()"> gravar busão </button><br>
+    Pesquisar: <input id="ipt_pesquisar" type="text"><br>
+    <button onclick="pesquisar ()"> pesquisar</button><br>
+
+    <div id="div_mensagem"></div>
+    <div id="div_pesquisar"></div>
+
+
+</body>
+</html>
+
+<script>
+
+  var busao = []
+
+  function gravar () {
+    var linha = ipt_linha.value
+    busao.push(linha)
+    ipt_linha.value = ""
+    div_mensagem.innerHTML = ""
+
+    for(var i = busao.length; i > 0; i--){
+        div_mensagem.innerHTML += `${busao[i -1]}<br> `
+    }
+  }
+
+
+  function pesquisar () {
+
+    var listaIndices = [];
+    var linha = ipt_linha.value
+    var pesquisarBusao = ipt_pesquisar.value;
+    div_pesquisar.innerHTML = ""
+     
+
+    for (var i = 0; i < busao.length; i++) {
+      var linhaAtual = busao[i]
+      
+      if(pesquisarBusao == busao[i]){
+        listaIndices.push(i+1)
+      }
+    }
+    if(listaIndices == 0){
+     div_pesquisar.innerHTML += `Você nunca pegou essa linha`}
+     else{ div_pesquisar.innerHTML += `Você pegou essa linha ${busao.length} vezes na ordem  ${listaIndices}`}
+
+
+
+
+
+   /* if (busao.indexOf != linha){
+        div_mensagem.innerHTML += `Você nunca pegou essa linha`
+    }
+*/
+
+  }
+
+</script>

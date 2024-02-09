@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    Renda Familiar: <input id="ipt_renda" type="number"> <br>
+    <button onclick="Analisar ()"> Analisar Renda</button>
+    <div id="div_mensagem"></div>
+</body>
+
+</html>
+
+<script>
+
+    function Analisar() {
+
+        var Renda = Number(ipt_renda.value);
+
+        if (Renda <= 250) {
+            div_mensagem.innerHTML = `Classe E`
+        }
+
+        else if (Renda <= 900) {
+            div_mensagem.innerHTML = `Classe D`
+        }
+
+        else if (Renda <= 2500) {
+            div_mensagem.innerHTML = `Classe C`
+        }
+
+        else if (Renda <= 9500) {
+            div_mensagem.innerHTML = `Classe B`
+        }
+
+        else { div_mensagem.innerHTML = `Classe A`}
+
+
+    }
+
+
+</script>

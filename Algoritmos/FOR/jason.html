@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     Nome: <input id="ipt_nome" type="text"><br>
+     idade: <input id="ipt_idade" type="number"><br>
+     rua: <input id="ipt_rua" type="text"><br>
+     Numero: <input id="ipt_numero" type="number"><br>
+    <button onclick="exibir()">Exibir Dados</button>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+    
+    function exibir(){
+
+    const nome = ipt_nome.value;
+    const idade = Number(ipt_idade.value);
+    const rua = ipt_rua.value;
+    const numero = Number(ipt_numero.value);
+
+    var pessoa = {
+        nome,
+        idade,
+        endereco: {
+        rua,
+        numero
+        }
+    };
+
+    pessoa.nome = nome;
+    div_mensagem.innerHTML = `Olá ${pessoa.nome}!<br> Sua idade é ${pessoa.idade}<br> Você mora na rua ${pessoa.endereco.rua}<br> No número ${pessoa.endereco.numero}`
+}
+
+
+</script>

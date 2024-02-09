@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Valor Passagem:<input id="ipt_passagem" type="text"> <br>
+    Viagens: <input id="ipt_viagens" type="text"> <br>
+
+    <button onclick="verEconomia ()"> Ver Economia </button>
+    
+</body>
+</html>
+
+<script>
+
+ function verEconomia () {
+  
+    var passagem = ipt_passagem.value;
+    var viagens = ipt_viagens.value;
+    var economia = (passagem / 2) * viagens;
+      
+    alert ("Você economizará R$" + economia + " por mês.")
+
+ }
+
+</script>

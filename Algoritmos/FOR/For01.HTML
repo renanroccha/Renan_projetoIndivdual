@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Valor Água: <input id="ipt_agua" type="number"><br>
+    Valor Coco: <input id="ipt_coco" type="number"><br>  
+
+    <button onclick=" ver ()"> Abrir o quiosque</button>
+    <button onclick=" venda ()"> registrar a venda</button><br>
+    
+    <select id="selectOpção">
+        <option value="1"> Primeira opção</option>
+        <option value="2"> Segunda opção</option>
+        <option value="3"> Terceira opção</option>
+    </select>
+    
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script> 
+
+function ver () {
+    var opção = selectOpção.value;
+    var agua = Number(ipt_agua.value);
+    var coco = Number(ipt_coco.value);
+
+     if(agua < 100){
+        div_mensagem.innerHTML += `Com essa quantidade de Água engarrafada não dá para abrir o quiosque <br>`
+     }
+     if(coco < 200){
+        div_mensagem.innerHTML += `Com essa quantidade de Coco fechado não dá para abrir o quiosque <br>`
+     }
+     if(agua >=100 && agua<=1000){
+        div_mensagem.innerHTML += `Engarrafe mais água de coco <br>`
+     }
+     if(coco >=200 && coco<=2000){
+        div_mensagem.innerHTML += `Compre mais cocos <br>`
+     }
+       
+
+    function venda (){
+
+      
+
+    }
+     
+
+
+      /*for(var i = 0 ; agua < 100 || coco <200 ; i++){
+        div.mensagem.innerHTML
+      }*/
+}
+
+
+
+</script>
+
+

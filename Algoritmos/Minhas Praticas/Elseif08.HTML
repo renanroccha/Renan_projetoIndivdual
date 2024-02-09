@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    Quantos pães come por dia?: <input id="ipt_pao" type="number"> <br>
+    Quantas bolachas recheadas come por dia?: <input id="ipt_bolacha" type="number"> <br>
+    Quantos achocolatados toma por dia?: <input id="ipt_achocolatado" type="number"> <br>
+    <button onclick="calorias ()"> Verificar Calorias </button>
+    <div id="div_mensagem"></div>
+
+
+</body>
+
+</html>
+
+<script>
+    function calorias () {
+
+        var pao = Number(ipt_pao.value) * 50;
+        var bolacha = Number(ipt_bolacha.value) * 80;
+        var achocolatado = Number(ipt_achocolatado.value) * 70;
+        var total = pao + bolacha + achocolatado;
+
+        if (total <200) {
+            div_mensagem.innerHTML = `Parabéns, vai ficar em forma !`
+        }
+        else if (total <=400) {
+            div_mensagem.innerHTML = `Cuidado, vai ficar menos saudável !`
+        }
+        else{ div_mensagem.innerHTML = `Alerta crítico de saúde !!!` 
+        }
+
+
+
+    }
+</script>

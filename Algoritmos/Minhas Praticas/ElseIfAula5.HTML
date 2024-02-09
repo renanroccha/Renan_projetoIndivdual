@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    Insira um numero: <input id="ipt_numero">
+    <button onclick="analisar ()"> Analisar </button>
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function analisar() {
+
+        var numero = Number(ipt_numero.value);
+
+        if (numero >= 20 && numero <= 30) {div_mensagem.innerHTML = `${numero} esta entre 20 e 30`
+        }
+        else { div_mensagem.innerHTML = `${numero} o numero não está entre 20 e 30` }
+    }
+
+
+</script>

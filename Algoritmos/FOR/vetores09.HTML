@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    Projeto<input id="ipt_nome" type="text"> <br>
+    <button onclick="projeto ()">Registar Projeto</button><br>
+    <button onclick="mostrar ()"> mostrar projetos </button><br>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+   
+   var aluno = []
+
+   function projeto (){
+
+var nome = ipt_nome.value;
+aluno.push(nome);
+ipt_nome.value = "";
+div_mensagem.innerHTML = "";
+
+   exibir ()
+
+   }
+
+   function exibir () {
+
+    div_mensagem.innerHTML += `Você já fez ${aluno.length} projetos. Por isso você é um profissional Z <br>`
+
+    div_mensagem.innerHTML += `${aluno.length} é a quantidade de projetos e Z é seu nível de experiência, segundo estas regras: <br> `
+
+    if(aluno.length <= 4 ){
+        div_mensagem.innerHTML += `Você é Junior <br>`
+    }
+    if(aluno.length >=5 && aluno.length <=12){
+        div_mensagem.innerHTML += `Você é pleno <br>`
+    }
+    else if(aluno.length >12)
+    {div_mensagem.innerHTML += `Você é senior <br>`}
+    
+
+   }
+      
+   function mostrar (){
+
+    for(var i = aluno.length; i > 0; i --){
+    div_mensagem.innerHTML += `${aluno[i -1]}<br> `
+   }
+   }
+
+</script>

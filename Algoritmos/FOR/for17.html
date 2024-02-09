@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantas pessoas: <br><input type="text" id="ipt_Pessoas"><br>
+    Quantos cabem: <br><input type="text" id="ipt_Capacidade"><br>
+    <button onclick="ver ()"> vamos </button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function ver (){
+        var pessoas = Number(ipt_Pessoas.value)
+        var cabem = Number(ipt_Capacidade.value)
+        div_mensagem.innerHTML = ''
+
+        for(var contador = 1; contador <= pessoas; contador++){
+            if(contador == 1){
+                div_mensagem.innerHTML += `Entrou o ${contador}º passageiro (que é o(a) motorista) <br>`
+            }else if(contador <= cabem){
+                div_mensagem.innerHTML += `Entrou o ${contador}º passageiro <br>`
+            }else{
+                div_mensagem.innerHTML += `O ${contador}º passageiro terá que esperar! <br>`
+            }
+        }
+
+    }
+</script>

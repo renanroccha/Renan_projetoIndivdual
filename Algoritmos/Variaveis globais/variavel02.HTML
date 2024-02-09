@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Salário: <input id="ipt_salario" type="number"> <br>
+
+    <button onclick ="confirmar ()"> Confimar Salário </button>
+    <button onclick="pagar100 ()"> Pagar conta de 100</button>
+    <button onclick="pagar500 ()"> Pagar conta de 500</button>
+    <button onclick="ganhar2000 ()"> Ganha 2000 na loteria</button>
+
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+var salario = Number(ipt_salario.value)
+
+function atualizar() {
+    div_mensagem.innerHTML = `Grana atual ${salario} R$`
+}
+
+function confirmar () {
+
+    salario = Number(ipt_salario.value)
+    atualizar()
+    
+}
+
+function pagar100 () {
+
+    salario = salario - 100;
+    atualizar()
+    
+}
+
+function pagar500 () {
+    salario = salario - 500;
+    atualizar()
+    
+}
+
+function ganhar2000 () {
+    salario = salario + 2000;
+    atualizar()
+
+}
+
+
+
+</script>

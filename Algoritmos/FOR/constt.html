@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Inicio <input id="ipt_inicio" type="number"><br>
+    Fim <input id="ipt_fim" type="number"><br>
+    <button onclick="calcular ()">Calcular</button><br>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+
+<script>
+
+    
+    function calcular () {
+ 
+  let numero1 = Number(ipt_inicio.value)
+  let numero2 = Number(ipt_fim.value)
+    div_mensagem.innerHTML = ""
+
+  div_mensagem.innerHTML += `Somando ${somar (numero1 , numero2)}<br>`
+  div_mensagem.innerHTML += `Subtraindo ${subtrair (numero1 , numero2)}<br>`
+  div_mensagem.innerHTML += `Multiplicando ${multiplicar (numero1 , numero2)}<br>`
+  div_mensagem.innerHTML += `Dividindo ${dividir (numero1 , numero2 ).toFixed(2)}`
+
+}
+
+function somar(numero1, numero2) {
+   return numero1 + numero2;
+}
+
+function subtrair(numero1, numero2) {
+   return numero1 - numero2;
+}
+
+function multiplicar(numero1, numero2) {
+   return numero1 * numero2;
+}
+
+function dividir(numero1, numero2) {
+   return numero1 / numero2;
+}
+
+
+
+</script>

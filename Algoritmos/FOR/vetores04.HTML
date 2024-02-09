@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Filmes: <input id="ipt_filme" type="text"><br>
+    <button onclick="cadastrar ()"> Cadastrar </button><br>
+    <button onclick="favoritos ()"> Exibir filmes favoritos </button><br>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+ <script>
+
+   var filmes = []
+
+   function cadastrar () {
+    var assistir = ipt_filme.value
+    ipt_filme.value = ""
+    div_mensagem.innerHTML = ""
+    filmes.push(`${assistir}<br>`)
+   }
+
+   function favoritos () {
+     
+    var assistir = ipt_filme.value
+
+    div_mensagem.innerHTML += `${filmes}<br>`
+
+    div_mensagem.innerHTML += `Total de ${filmes.length}`
+
+    div_mensagem.innerHTML += `O que filme que mais gosta é ${filmes[0]}<br>`
+     
+
+    div_mensagem.innerHTML += `E desses, o que menos gosta é ${filmes[filmes.length -1]}<br> `
+
+
+
+   }
+
+   
+
+
+
+ </script>

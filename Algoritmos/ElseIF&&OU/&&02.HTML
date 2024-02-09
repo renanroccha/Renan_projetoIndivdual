@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Sua Renda: <input id="ipt_renda" type="number"> <br>
+    Renda Familiar: <input id="ipt_familia" type="number"> <br>
+    <button onclick="Covid ()"> Verificar Ajuda </button>
+</body>
+</html>
+
+<script>
+    function Covid (){
+        var renda = Number(ipt_renda.value);
+        var familia = Number(ipt_familia.value);
+        if(renda <=1050 && familia <=2100){
+            alert `Você terá direito!`
+        }
+        else{alert `Você NÃO terá direito`}
+    }
+</script>

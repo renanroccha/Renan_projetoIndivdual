@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Filhos: <input id="ipt_filho" type="text"> <br>
+    <button onclick="cadastrar ()"> Cadastrar Filhos </button><br>
+    <button onclick="atualizar ()"> Atualizar Filhos </button><br>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+    
+<script>
+
+    var filhos = []
+
+    function cadastrar (){
+        var filhote = ipt_filho.value
+        div_mensagem.innerHTML = ""
+        
+        if(filhos.indexOf(filhote) < 0){
+            filhos.push(filhote)
+            ipt_filho.value = ""
+        }
+        else{alert  (`Não pode nome repetidos`)}
+    }
+     
+    function atualizar (){
+      
+        var filhote = ipt_filho.value
+        var particular = filhos.length * 3000;
+        var pública = filhos.length * 1500;
+
+        div_mensagem.innerHTML += `   Você tem ${filhos.length} filhos 
+
+Seu custo mensal será aproximadamente ${particular}R$ se colocá-los em escola particular ou ${pública} se eles estudarem em escola pública  `
+
+        
+    }
+
+
+
+</script>

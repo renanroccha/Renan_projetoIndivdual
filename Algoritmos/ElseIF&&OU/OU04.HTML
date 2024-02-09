@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    Método de pagamento: <input id="ipt_pagamento" type="text"> <br>
+    <button onclick="analisar ()"> Analisar Compra </button>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+function analisar () {
+
+var pagamento = ipt_pagamento.value;
+
+if(pagamento == "Dinheiro" || pagamento == "Débito") {
+    div_mensagem.innerHTML = `Você terá que pagar a vista`
+}
+if(pagamento == "Crédito" || pagamento == "Boleto") {
+    div_mensagem.innerHTML = `Pagamento poderá ser parcelado`
+}
+
+
+}
+
+
+</script>

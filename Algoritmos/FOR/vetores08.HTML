@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+ Alunos <input id="ipt_alunos" type="text"> <br>
+ <button onclick="cadastrar ()"> Cadastrar</button>
+ <div id="div_mensagem"></div>
+
+
+</body>
+</html>
+<script>
+
+var lista = []
+
+function cadastrar () {
+
+var nome = ipt_alunos.value
+lista.push(nome);
+div_mensagem.innerHTML = ""
+
+for(var i = lista.length; i > 0; i --){
+    div_mensagem.innerHTML += `${lista[i -1]} <br>`
+}
+
+}
+
+
+</script>

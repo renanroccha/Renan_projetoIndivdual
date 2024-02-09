@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Escolha a tabuada: 
+    <br><input min="2" max="9" placeholder="2 a 9" type="number" id="ipt_tabuada"><br>
+
+    até quantos deseja?
+    <br><input placeholder="Ex:9" type="number" id="ipt_numero"><br>
+
+    <button onclick="Conferir()">Ver tabuada</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function Conferir(){
+        var limite = Number(ipt_numero.value)
+        var tabuada = Number(ipt_tabuada.value)
+        div_mensagem.innerHTML = ''
+
+        for(var contador  = 0; contador <= limite; contador++){
+            div_mensagem.innerHTML += `${tabuada} x ${contador} = ${contador * tabuada} <br>`
+    }
+    }
+</script>

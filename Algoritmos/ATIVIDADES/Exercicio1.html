@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Horas de sono:<input id="ipt_sono"  type="text"><br>
+    <button onclick="calcularSono ()"> Calcular Sono </button>
+    <div id="div_frase"></div>
+
+</body>
+</html>
+
+<script>
+
+function calcularSono () {
+    var horas_dormidas = (ipt_sono.value);
+
+var horas1 = (horas_dormidas * 0.05)
+var horas2 = (horas_dormidas * 0.45)
+var horas3 = (horas_dormidas * 0.30)
+var horasRem = (horas_dormidas * 0.20)
+
+
+div_frase.innerHTML = `Ao dormir  ${horas_dormidas}  horas, você dormiu; <br> ${horas1}`
+
+}
+
+</script>
+
+
+
+alert (`Ao dormir ${horas_dormidas} horas, você dormiu:
+    ${horas1} horas na fase 1
+    ${horas2} horas na fase 2
+    ${horas3} horas na fase 3
+    ${horasRem}  horas na fase REM `)

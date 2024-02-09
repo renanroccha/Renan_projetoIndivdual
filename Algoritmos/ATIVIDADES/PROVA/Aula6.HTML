@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Temperatura: <input id="ipt_temperatura" type="number"> <br>
+    <button onclick="Medir ()"> Medir</button>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+
+function Medir (){
+
+    var temperatura = Number(ipt_temperatura.value)
+
+    if(temperatura <15){
+        div_mensagem.innerHTML = `Muito Frio!`}
+
+   if(temperatura <=25) {
+     if(temperatura >=15)  div_mensagem.innerHTML = `Temperatura OK`}
+
+     else{div_mensagem.innerHTML = `Muito Calor!`}
+}
+
+
+</script>
+

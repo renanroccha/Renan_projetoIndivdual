@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    Temperatura: <input id="Ipt_temperatura" type="text"> <br>
+    <button onclick="graus ()"> Resultado Graus </button>
+    <div id="div_mensagem"></div>
+
+
+</body>
+
+</html>
+
+<script>
+
+    function graus() {
+
+        var temperatura = Number(Ipt_temperatura.value);
+
+        if (temperatura < 14) {
+            div_mensagem.innerHTML = `Congelante`
+        }
+
+        else if (temperatura <= 21) {
+            div_mensagem.innerHTML = `Com frio`
+        }
+
+        else if (temperatura <= 24) {
+            div_mensagem.innerHTML = `Confortável`
+        }
+
+        else if (temperatura <= 31) {
+            div_mensagem.innerHTML = `Com Calor`
+        }
+
+        else { div_mensagem.innerHTML = `Calor Escaldante`}
+
+    }
+
+
+</script>

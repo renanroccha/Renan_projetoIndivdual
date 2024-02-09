@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Temperatura Ambiente: <input id="ipt_temperatura" type="number"> <br>
+    <button onclick="Clima ()"> Veeificar Clima </button>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+function Clima () {
+
+    var temperatura = Number(ipt_temperatura.value);
+
+    if(temperatura <10){
+        div_mensagem.innerHTML = `<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRy1WmuvxrrkC0ZRnZIZ4iJ3PM6ju9VKmW6Q&usqp=CAU">`
+
+    } else{div_mensagem.innerHTML =`<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQphyaHvui1GPvqE3wON_PbJ5FHiWg3aAoqng&usqp=CAU">`
+}
+
+}
+
+
+</script>

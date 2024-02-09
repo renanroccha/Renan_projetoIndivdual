@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="jogar ()"> Jogar Dado </button>
+    <div id="div_mensagem"></div>
+    
+
+</body>
+</html>
+
+<script>
+
+function jogar (){
+    
+    var min = 0; 
+    var max = 20;
+    var intervalo = max - min;
+    var aleatorio = min + Math.random() * intervalo
+
+    div_mensagem.innerHTML = `<div style='background-color: black; color: white; align-items: center; justify-content: center; display: flex;  width: 100px; height: 100px;'> ${aleatorio.toFixed(0)}</div>`
+}
+
+
+</script>

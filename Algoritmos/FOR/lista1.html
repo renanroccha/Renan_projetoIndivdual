@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input id="ipt_fruta" type="text"><br>
+    <button onclick="adicionar ()">adicionar frutas </button>
+    <div id="div_mensagem"></div>
+   
+
+</body>
+</html>
+
+<script>
+
+var listaFrutas = ["maçã", "banana"];
+function exibir () {
+for(var i = 0; i < listaFrutas.lenght ; i++){
+    var frutaAtual = listaFrutas[i];
+    div_mensagem.innerHTML += `${frutaAtual} <br>`
+}
+}
+function pesquisar () {
+    var contadorMorangos
+for(var i = 0; i < listaFrutas.lenght ; i++){
+    var frutaAtual = listaFrutas[i];
+    if(frutaAtual == "morango") contadorMorangos++;
+    div_mensagem.innerHTML += `${frutaAtual} <br>`
+}
+}
+
+
+function adicionar () {
+   var fruta = ipt_fruta.value;
+   listaFrutas.push(fruta);
+   pesquisar ();
+
+
+}
+
+
+</script>

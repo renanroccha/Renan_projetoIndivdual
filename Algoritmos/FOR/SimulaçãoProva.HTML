@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Nome do astronauta: <input id="ipt_nome" type="text"><br>
+    qtdDias: <input id="ipt_dias" type="Number"><br>
+    qtdHoras: <input id="ipt_horas" type="Number"><br>
+    qtdMinutos: <input id="ipt_minutos" type="Number"><br>
+
+    <button onclick="dias ()">Registrar Viagem</button><br>
+
+    <div id="div_mensagem"></div><br>
+
+    <button onclick="relatorio ()">relatorio de viagem</button>
+    <div id="div_viagem"></div>
+    
+    
+</body>
+</html>
+
+<script>
+
+    var listaDias = []
+    var listaHoras = []
+    var listaMinutos = []
+    
+    function dias () {
+
+        var nome = ipt_nome.value;
+        var diass = Number(ipt_dias.value);
+        var horas = Number(ipt_horas.value);
+        var minutos = Number(ipt_minutos.value);
+        
+        listaDias.push(diass)
+        listaHoras.push(horas)
+        listaMinutos.push(minutos)
+        div_mensagem.innerHTML = ""
+
+
+        if(diass > 0 || horas > 0 || minutos > 0){
+        div_mensagem.innerHTML = `${diass} dias, ${horas} horas e ${minutos} minutos.`
+          } else{alert (`informe um tempo de viagem válido`)}
+
+     }
+         
+     function relatorio () {
+
+        var nome = ipt_nome.value;
+        var diass = Number(ipt_dias.value);
+        var horas = Number(ipt_horas.value);
+        var minutos = Number(ipt_minutos.value);
+
+        var tempo = minutos * diass + minutos * horas + minutos
+        var total = tempo / 525600;
+           
+        for (var i = 0; i < listaDias.length && i < listaHoras.length && i < listaMinutos.length; i++){
+            div_viagem.innerHTML = `Foram registradas ${listaDias} viagens, detalhadas a seguir:`
+
+            if(total >1 && total <=13){
+                div_viagem.innerHTML = `<img style = "height: 150px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH2HWM8q-DrLo7ozlWlgclbutFFQkYl1-u0A&usqp=CAU">`
+            } 
+            
+           else if(total >30 && total <=65){
+                div_viagem.innerHTML = `<img style = "height: 150px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU7k_x5y_GWxZIV6_HBpQwI-orU9SQGsYcfA&usqp=CAU">`
+            }
+            
+           else if(total >65 && total <=100){
+                div_viagem.innerHTML = `<img style = "height: 150px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmUTGR1aFop0t__bansjZHJjVbqSEjAC-5cw&usqp=CAU">`
+            }
+            
+           else if(total >100){
+                div_viagem.innerHTML = `<img style = "height: 150px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSABscATpYkYgcEs3nGgYPvshQEqjMILR1F8g&usqp=CAU">`
+            }
+        }
+        
+     }
+
+</script>

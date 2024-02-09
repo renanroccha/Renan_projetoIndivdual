@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="gerar ()">Gerar número</button>
+    <button onclick="gerar15 ()">Gerar 15</button>
+    <button onclick="gerar5ate15 ()">Gerar 5 até 15</button><br>
+    <input id="ipt_min" type="number">
+    <input id="ipt_max" type="number">
+    <button onclick="gerar5a15 ()">Gerar 5 até 15</button>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+<script>
+
+function gerar (){
+    var aleatorio = Math.random()
+    div_mensagem.innerHTML = aleatorio.toFixed(2)
+}
+   function gerar15 (){
+    var aleatorio = Math.random() * 50;
+    div_mensagem.innerHTML = aleatorio.toFixed(0)
+}
+
+function gerar5ate15 (){
+    var max = 15;
+    var min = 5;
+    var intervalo = max - min; //10
+
+    var aleatorio = min + Math.random() * intervalo
+        div_mensagem.innerHTML = aleatorio.toFixed(0)
+    }
+
+    function gerar5a15 (){
+    
+        var min = Number(ipt_min.value) 
+        var max = Number(ipt_max.value) 
+
+        var intervalo = max - min;
+
+        var aleatorio = min + Math.random() * intervalo;
+        /*div_mensagem.innerHTML = aleatorio.toFixed(0)*/
+        div_mensagem.innerHTML = parseInt(aleatorio + 1);
+
+
+    }
+
+</script>

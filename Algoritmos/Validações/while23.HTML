@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Inferior: <input id="ipt_inferior" type="number"> <br>
+    Superior: <input id="ipt_superior" type="number"> <br>
+    Divisibilidade: <input id="ipt_dvb" type="number"> <br>
+    <button onclick="Contar ()">  Contar </button>
+    
+</body>
+</html>
+
+<script>
+
+function contar () {
+
+var inferior = Number(ipt_inferior.value);
+var superior = Number(ipt_superior.value);
+var dvb = Number(ipt_dvb.value)
+var contagem = 0;
+
+while(inferior > 1 && superior <100 && dvb <=10 && dvb >=3){
+   contagem += 1;
+    
+}
+  else(div_mensagem.innerHTML = `Não vai avançar`)
+
+}
+
+
+
+</script>

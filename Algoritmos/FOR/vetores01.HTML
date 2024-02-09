@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+   Lista de Frutas: <input  id="ipt_fruta"  type="text"><br>
+    <button onclick="PesquisarFruta()">Pesquisar</button><br>
+    <div id="div_mensagem"></div>
+
+    
+</body>
+</html>
+
+<script>
+
+var listaDeFrutas = ["Manga", "Banana", "Laranja", "Abacate"];
+
+function PesquisarFruta() {
+  var fruta = ipt_fruta.value;
+  var lista = false;
+
+  for (var i = 0; i < listaDeFrutas.length; i++) {
+    if (fruta === listaDeFrutas[i]) {
+      lista = true;
+      break;
+    }
+  }
+
+  if (lista) {
+    div_mensagem.innerHTML = `A fruta ${fruta} existe na lista.`
+  } else {
+    div_mensagem.innerHTML = `Não existe a fruta ${fruta} na lista.`
+  }
+}
+
+
+
+</script>

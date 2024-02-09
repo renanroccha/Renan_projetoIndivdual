@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Quantos depositos: <input id="ipt_qntd" type="number"><br>
+    Valor Deposito: <input id="ipt_valor" type="number"><br>
+    <button onclick="grana()"> Acompanhar grana </button>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+
+<script>
+
+
+function grana() {
+
+var qntd = Number(ipt_qntd.value);
+var valor = Number(ipt_valor.value);
+var contador = 0;
+
+while (contador < qntd ){
+    contador +=1;
+if(contador % 3 == 0){
+
+valor = (valor + (valor *0.01))  
+
+div_mensagem.innerHTML +=  `${contador} Mês: R$ ${valor * contador}  ` 
+
+div_mensagem.innerHTML += `<img id="img_imagem" style= "width: 10px;" src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQU0kuSHWBa4fP1S4AOFHeFmplzH_AoKN_FGw&usqp=CAU"> <br>`
+
+}
+else{
+    div_mensagem.innerHTML +=  `${contador} Mês: R$ ${valor * contador} <br> ` 
+
+}
+
+} 
+
+    div_mensagem.innerHTML += `Total guardado: R$ ${valor  * contador }` 
+
+   
+    
+}
+
+
+</script>

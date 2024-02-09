@@ -1,0 +1,109 @@
+
+.flex-container{
+    display: flex;
+    height: flex;
+    width: flex;
+    margin: 10px;
+    background-color: gray;
+    text-align: center;
+    line-height: 125px;
+}
+.flex-container2{
+    display: flex;
+    height: flex;
+    width: flex;
+    margin: 10px;
+    background-color: gray;
+    justify-content: flex-end;
+    text-align: center;
+    line-height: 125px;
+}
+.flex-container3{
+    display: flex;
+    height: flex;
+    width: flex;
+    margin: 10px;
+    background-color: gray;
+    justify-content: center;
+    text-align: center;
+    line-height: 125px;
+}
+.flex-container4{
+    display: flex;
+    height: flex;
+    width: flex;
+    margin: 10px;
+    background-color: gray;
+    justify-content: space-between;
+    text-align: center;
+    line-height: 125px;
+}
+.flex-container5{
+    display: flex;
+    height: flex;
+    width: flex;
+    margin: 10px;
+    background-color: gray;
+    justify-content: space-around;
+    text-align: center;
+    line-height: 125px;
+}
+.flex-container6{
+    display: flex;
+    height: flex;
+    width: flex;
+    margin: 10px;
+    background-color: gray;
+    justify-content: space-evenly;
+    text-align: center;
+    line-height: 125px;     
+}
+.flex-containerB{
+    display:flex;
+    height: flex;
+    width: flex;
+    margin: 10px;
+    background-color: gray;
+    line-height: 125px;     
+    text-align: center;
+  flex-direction: column-reverse;
+}
+.flex-container-Desafio{
+    display:flex;
+    height: flex;
+    width: flex;
+    margin: 10px;
+    background-color: gray;
+    line-height: 125px;     
+    text-align: center;
+    justify-content: left;
+  flex-direction:row-reverse;
+}
+.div1{
+    background-color: aqua;
+    font-size: 50px;
+    width: 125px;
+    height:125px;
+   
+}
+.div2{
+    background-color: blue;
+    font-size: 50px;
+    width: 125px;
+    height:125px;
+    
+}
+.div3{
+    background-color: palevioletred;
+    font-size: 50px;
+    width: 125px;
+    height:125px;
+    
+}
+.div4{
+    background-color: yellow;
+    font-size: 50px;
+    width: 125px;
+    height:125px;
+    
+}

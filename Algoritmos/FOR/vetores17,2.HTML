@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa de Alunos</title>
+</head>
+<body>
+
+    <h1>Interface gráfica do usuário</h1>
+
+    <label for="de">De:</label>
+    <input type="number" id="de" placeholder="0" min="0" max="10">
+    
+    <label for="ate">Até:</label>
+    <input type="number" id="ate" placeholder="10" min="0" max="10">
+
+    <button onclick="pesquisar()">Pesquisar</button>
+
+    <h2>Resultado da Pesquisa:</h2>
+    <ul id="lista-resultados"></ul>
+
+    <h3>Resumo:</h3>
+    <p>Total de alunos registrados: <span id="total-registrados">0</span></p>
+    <p>Total de alunos listados: <span id="total-listados">0</span> (com nota no intervalo informado)</p>
+    <p>Maior Nota: <span id="maior-nota">0</span></p>
+    <p>Menor Nota: <span id="menor-nota">0</span></p>
+    <p>Média da Nota: <span id="media-nota">0</span></p>
+
+    <script>
+        var registros = [];
+
+        function pesquisar() {
+            var de = parseFloat(document.getElementById('de').value);
+            var ate = parseFloat(document.getElementById('ate').value);
+
+            if (isNaN(de) || isNaN(ate) || de < 0 || de > 10 || ate < 0 || ate > 10 || de > ate) {
+                alert('Por favor, insira um intervalo de pesquisa válido.');
+                return;
+            }
+
+            var alunosFiltrados = registros.filter(function(aluno) {
+                return aluno.nota >= de && aluno.nota <= ate;
+            });
+
+            exibirResultados(alunosFiltrados);
+            exibirResumo(alunosFiltrados);
+        }
+
+        function exibirResultados(alunos) {
+            var listaResultados = document.getElementById('lista-resultados');
+            listaResultados.innerHTML = '';
+
+            alunos.forEach(function(aluno) {
+                var item = document.createElement('li');
+                item.textContent = 'O aluno ' + aluno.nome + ' ficou com a nota ' + aluno.nota;
+                listaResultados.appendChild(item);
+            });
+        }
+
+        function exibirResumo(alunos) {
+            document.getElementById('total-registrados').textContent = registros.length;
+            document.getElementById('total-listados').textContent = alunos.length;
+
+            if (alunos.length > 0) {
+                var notas = alunos.map(function(aluno) {
+                    return aluno.nota;
+                });
+
+                document.getElementById('maior-nota').textContent = Math.max(...notas);
+                document.getElementById('menor-nota').textContent = Math.min(...notas);
+
+                var media = notas.reduce(function(sum, nota) {
+                    return sum + nota;
+                }, 0) / alunos.length;
+
+                document.getElementById('media-nota').textContent = media.toFixed(1);
+            } else {
+                document.getElementById('maior-nota').textContent = 0;
+                document.getElementById('menor-nota').textContent = 0;
+                document.getElementById('media-nota').textContent = 0;
+            }
+        }
+    </script>
+
+</body>
+</html>

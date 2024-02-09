@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tênis Clube SPTECH</title>
+    <style>
+        body {
+            display: flex;
+            align-items: stretch;
+        }
+
+        body div:first-child,
+        body div:nth-of-type(2) {
+            padding: 8px;
+            border: 2px solid rgba(0, 0, 0, 0.2);
+        }
+
+        body div:nth-of-type(2) {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <label for="input_qtd_partidas">
+            Rodadas máximas:
+            <input id="input_qtd_partidas" /><br />
+        </label>
+
+        <button onclick="realizar_partida()">Realizar partida</button>
+
+        <h3>Informe as partidas que deseja relembrar</h3>
+
+        <label for="input_inicio_intervalo">Início:</label>
+        <input id="input_inicio_intervalo" />
+        <label for="input_fim_intervalo">Fim:</label>
+        <input id="input_fim_intervalo" />
+
+        <button onclick="relembrar_partidas()">Relembrar</button>
+    </div>
+    <div>
+        <h3>Painel</h3>
+        <div id="div_painel"></div>
+    </div>
+
+    <script>
+        var partidasRealizadas = [];
+
+        function realizar_partida() {
+            var qtdPartidas = document.getElementById("input_qtd_partidas").value;
+            if (!qtdPartidas || isNaN(qtdPartidas) || qtdPartidas <= 0) {
+                alert("Por favor, informe um número válido de rodadas.");
+                return;
+            }
+
+            // Simulação da realização de partidas
+            for (var i = 1; i <= qtdPartidas; i++) {
+                simularPartida();
+            }
+
+            exibirPainel();
+        }
+
+        function simularPartida() {
+            var resultado = Math.random();
+            if (resultado < 0.33) {
+                partidasRealizadas.push("Vitória");
+            } else if (resultado < 0.66) {
+                partidasRealizadas.push("Derrota");
+            } else {
+                partidasRealizadas.push("Empate");
+            }
+        }
+
+        function relembrar_partidas() {
+            var inicioIntervalo = document.getElementById("input_inicio_intervalo").value;
+            var fimIntervalo = document.getElementById("input_fim_intervalo").value;
+
+            if (!inicioIntervalo || isNaN(inicioIntervalo) || !fimIntervalo || isNaN(fimIntervalo)) {
+                alert("Por favor, informe intervalos válidos.");
+                return;
+            }
+
+            var inicio = parseInt(inicioIntervalo);
+            var fim = parseInt(fimIntervalo);
+
+            if (inicio < 1 || fim < 1 || inicio > partidasRealizadas.length || fim > partidasRealizadas.length || inicio > fim) {
+                alert("Intervalo de partidas inválido.");
+                return;
+            }
+
+            var partidasRelembradas = partidasRealizadas.slice(inicio - 1, fim);
+            exibirPainel(partidasRelembradas);
+        }
+
+        function exibirPainel(partidas = []) {
+            var divPainel = document.getElementById("div_painel");
+            divPainel.innerHTML = "";
+
+            if (partidas.length > 0) {
+                var ul = document.createElement("ul");
+
+                partidas.forEach(function (partida) {
+                    var li = document.createElement("li");
+                    li.textContent = partida;
+                    ul.appendChild(li);
+                });
+
+                divPainel.appendChild(ul);
+            } else {
+                divPainel.textContent = "Nenhuma partida disponível para exibir.";
+            }
+        }
+    </script>
+</body>
+</html>

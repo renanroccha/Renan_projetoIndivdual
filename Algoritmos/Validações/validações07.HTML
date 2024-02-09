@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Numero <input id="ipt_numero" type="number"> <br>
+    <button onclick = "contar ()"> contar </button>
+    <div id="div_mensagem"></div>
+    
+</body>
+</html>
+<script>
+
+function contar () {
+ var contador = 0;
+
+ var texto = "";
+ while(contador <=100){
+    if (contador % 2 == 0) {
+        texto += `${contador} <br>`
+    }
+    contador +=1;
+ }
+    div_mensagem.innerHTML = texto;
+
+
+
+}
+
+
+</script>

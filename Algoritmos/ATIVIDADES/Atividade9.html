@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Nome Aluno:<input id="ipt_nome" type="text"> <br>
+    Nota Continuada: <input id="ipt_notaContinuada" type="text"> <br>
+    Nota Semestral: <input id="ipt_notaSemestral" type="text"> <br>
+
+    <button onclick="calcularMedia ()"> Calcular Média </button>
+
+
+</body>
+</html>
+
+<script>
+
+  function calcularMedia () {
+
+    var nomeAluno = ipt_nome.value;
+    var notaContinuada = ipt_notaContinuada.value
+    var notaSemestral = ipt_notaSemestral.value
+    var media = (notaContinuada * 0.4) + (notaSemestral * 0.6);
+
+    alert ("A média de " + nomeAluno + " será de " + media)
+
+  }
+
+</script>

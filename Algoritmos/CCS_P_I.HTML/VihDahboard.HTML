@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vitoria Dashboard</title>
+    <link rel="stylesheet" href="VihDahboard.HTML">
+</head>
+<body  class="fundo">
+     <div class="titulo">
+      <h1>Comparações de </h1>
+     </div>
+  <div class="conteiner">
+    <div class="grafico">
+      <canvas id="myChart"></canvas>
+
+      </div>
+  </div>
+  
+      
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      
+      <script>
+        const ctx = document.getElementById('myChart');
+      
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Agosto', 'Setembro', 'Outubro'],
+            datasets: [{
+              label: 'Temperatura',
+              backgroundColor:'rgb(139,0,0)',
+                borderColor: 'rgb(139,0,0)',
+              data: [22, 24, 27],
+              borderWidth: 1
+            } , 
+            {
+
+                label: 'Umidade',
+                backgroundColor:'rgb(25,25,112)',
+                borderColor: 'rgb(25,25,112)',
+                data: [90, 89, 93],
+              borderWidth: 1
+            } ,
+            
+            {
+            label: 'Umidade',
+                backgroundColor:'rgb(25,25,112)',
+                borderColor: 'rgb(25,25,112)',
+                data: [90, 89, 93],
+              borderWidth: 1
+            },
+            {
+            label: 'Umidade',
+                backgroundColor:'rgb(25,25,112)',
+                borderColor: 'rgb(25,25,112)',
+                data: [30, 55, 12],
+              borderWidth: 1
+            },
+        ]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+
+      
+      </script>
+    
+</body>
+</html>
+
+

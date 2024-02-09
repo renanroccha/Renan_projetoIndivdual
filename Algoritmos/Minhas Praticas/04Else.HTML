@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Frequencia Aluno <input id="ipt_frequencia" type="number"> <br> 
+    <button onclick="Analisar ()"> Analisar Frequencia </button>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+
+function Analisar () {
+
+    var aluno = Number(ipt_frequencia.value);
+
+    if(aluno <50){
+           div_mensagem.innerHTML = `<img src= "https://img.freepik.com/fotos-gratis/turista-segurando-algo_1368-7046.jpg">`
+    }else {div_mensagem.innerHTML = `<img src= "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQj84U6VkZwHMfH2J5j1CPiHMN2V4bcuszCzw&usqp=CAU">`}
+}
+
+
+</script>

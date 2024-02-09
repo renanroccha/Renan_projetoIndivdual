@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renan Alves</title>
+</head>
+<body>
+
+    Energia Consumida:   <input id="energia_ipt" type="number"> <br>
+    Bandeira da Energia: <input id="bandeira_ipt" type="text"> <br>
+
+    Água consumidos (LITROS): <input id="agua_ipt" type="number"> <br>
+    Total de vazamentos:      <input id="vazamento_ipt" type="number"> <br>
+
+    Gás consumidos (LITROS):  <input id="gas_ipt" type="number"> <br>
+
+    Plano de Internet Valor:  <input id="internet_ipt" type="number"> <br>
+    Tem Linha Telefônica?:    <input id="linha_ipt" type="text"> <br>
+
+    <button onclick="Calcular ()"> Calcular Despesas Fixas </button>
+    <div id="div_frase"></div>
+
+    
+</body>
+</html>
+
+<script>
+    function Calcular () {
+
+    var kwh = Number(energia_ipt.value);
+    var Bandeira = bandeira_ipt.value;
+    var valorVerde = kwh * 0.75;
+    var valorAmarela = kwh *  0.9;
+    var valorVermelha = kwh * 1.0;
+    var total = kwh * Bandeira;
+
+    if(kwh <=50)  {
+        var valor_desconto = kwh;
+        valor_desconto - valor_desconto * 10/100;
+
+    }
+
+    var agua = Number(agua_ipt.value);
+    var vazamento = Number(vazamento_ipt.value);
+    var valorAgua = agua * 3.5;
+
+
+    if(vazamento >1 + valorAgua + 1.00 ) {}
+
+    var gas = Number(gas_ipt.value);
+    var valorGas = gas * 2.5;
+
+
+
+
+
+div_frase.innerHTML = `Com o consumo de ${kwh} kWh na bandeira ${Bandeira}, a conta de energia totaliza ${total}.
+
+Com o consumo de ${agua} litros de água contendo ${vazamento} vazamentos, a conta de água totaliza R$ ${valorAgua}.
+
+Com o consumo de ${gas} litros de gás, a conta de gás totaliza R$ ${valorGas}.
+
+Com um valor base de R$ II no plano de internet , a conta de internet/telefone totaliza R$ JJ.
+
+Gasto total de despesas mensal: R$ KK.`;
+
+    }
+
+
+
+</script>

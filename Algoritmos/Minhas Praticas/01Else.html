@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    nome: <input id="ipt_nome" type="text"> <br>
+    Idade: <input id="ipt_idade" type="number"> <br>
+    <button onclick="Avaliar ()"> Avaliar Aluno </button>
+    <div id="div_frase"></div>
+
+</body>
+</html>
+
+<script>
+
+function Avaliar () {
+
+    var nome = ipt_nome.value;
+    var idade = Number (ipt_idade.value);
+    var mensagem = div_frase;
+    
+    if(idade  >= 18) {
+    div_frase.innerHTML = `${nome} vamos tirar a CNH `;} 
+    
+    else{ div_frase.innerHTML = `${nome} vai jogar PlayStation! `;
+
+    }
+
+}
+
+
+</script>

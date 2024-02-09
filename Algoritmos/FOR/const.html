@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<button onclick="constt ()">const</button>   
+<button onclick="lett ()">let</button><br>
+<button onclick="lett2 ()">let2</button><br>
+<div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+
+function constt (){
+
+const teste = 1;
+console.log(teste)
+ if(true) {
+    teste = 2;
+    console.log(teste)
+ }
+}
+
+function lett (){
+
+ let testee = 1;
+console.log(testee)
+ if(true) {
+    testee = 2;
+    console.log(testee)
+ }
+}
+
+function lett2 (){
+    
+    let numero1 = 1;
+    const numero2 = numero1;
+    div_mensagem.innerHTML = `esse é o valor da const, ${numero2}`
+    numero1 = 22;
+    div_mensagem.innerHTML =  `valor do numero1", ${numero1}`;
+    div_mensagem.innerHTML = `valor do numero 2 depois do xpto ser alterado, ${numero2}`
+}
+
+</script>

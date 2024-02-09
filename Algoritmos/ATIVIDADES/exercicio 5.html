@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+Valor da passagem: <input type="text" id="ipt_valor"> <br>
+Quantidade viagens: <input type="text" id="ipt_qntd"> <br>
+Kilometragem: <input type="text" id="ipt_kilometros"> <br>
+<button onclick="calcular ()"> Calcular </button>
+<div id="div_frase"></div>
+
+</body>
+</html>
+
+<script>
+    function calcular () {
+      var valor = Number (ipt_valor.value)
+      var qntd = Number (ipt_qntd.value)
+      var Kilometragem = Number (ipt_kilometros)
+
+      var qntd_uber = qntd * 0.1
+      var qntd_onibus = qntd * 0.9
+
+      var valor_onibus =  (valor * qntd_uber)
+      var valor_uber = (0.75 * Kilometragem)
+
+      var valor_uber_total = (valor_uber * valor_onibus)
+      var valor_onibus_total = (valor * qntd_onibus)
+
+      var total = valor_uber_total + valor_onibus_total
+      div_frase.innerHTML = `você vai gastar R$ ${valor} por mês com transporte`
+
+    }
+
+</script>

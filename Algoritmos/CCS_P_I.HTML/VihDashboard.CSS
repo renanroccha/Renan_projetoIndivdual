@@ -1,0 +1,30 @@
+.grafico{
+    background-color: rgba(177, 201, 236, 0.809);
+    width: 700px;
+    height: 400px;
+
+}
+
+
+.conteiner{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 90%;
+
+}
+
+.fundo{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url(https://www.remessaonline.com.br/blog/wp-content/uploads/2022/07/fundos-de-papel-1170x780.jpg.optimal.jpg);
+    background-size: cover;
+}
+
+.titulo{
+    font-family: 'Noto Serif', serif;
+
+}

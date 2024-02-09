@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button onclick="sortear ()">Sortear jokenpo</button><br>
+    <div id="div_mensagem1"></div><br>
+    <div id="div_mensagem2"></div><br>
+    <div id="div_resultado"></div><br>
+
+</body>
+</html>
+
+<script>
+
+
+var jogador1 = ""
+var jogador2 = ""
+
+function sortear () {
+
+    jogador1 = (Math.random() * 3).toFixed(0)
+    jogador2 = (Math.random() * 3).toFixed(0)
+    
+    if(jogador1 == 1){
+        jogador1 = 'pedra'
+        div_mensagem1.innerHTML = `<img style = "height: 200px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShCGRM4H-UENDet9mTcBszN5o0TBZNkzxrAA&usqp=CAU">`
+    }
+    if(jogador1 == 2){
+        jogador1 = 'papel'
+        div_mensagem1.innerHTML = `<img style = "height: 200px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWaBBOaAq3NlWMXCfc5z65V47965aSup8DFA&usqp=CAU">`
+    }
+
+    if(jogador1 == 3){
+        jogador1 = 'tesoura'
+        div_mensagem1.innerHTML = `<img style = "height: 200px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4grZTA09f66SaFNW0vClmrvwgPjrITIBxiQ&usqp=CAU">`
+    }
+
+
+
+    
+    if(jogador2 == 1){
+        jogador2 = 'pedra'
+        div_mensagem2.innerHTML = `<img style = "height: 200px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShCGRM4H-UENDet9mTcBszN5o0TBZNkzxrAA&usqp=CAU">`
+    }
+
+    if(jogador2 == 2){
+        jogador2 = 'papel'
+        div_mensagem2.innerHTML = `<img style = "height: 200px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWaBBOaAq3NlWMXCfc5z65V47965aSup8DFA&usqp=CAU">`
+    }
+
+    if(jogador2 == 3){
+        jogador2 = 'tesoura'
+        div_mensagem2.innerHTML = `<img style = "height: 200px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4grZTA09f66SaFNW0vClmrvwgPjrITIBxiQ&usqp=CAU">`
+    }
+
+
+    if(jogador1 == 'pedra' && jogador2 == 'tesoura'){
+        div_resultado.innerHTML = `Jogador 1 Venceu`
+    }
+    
+    if(jogador1 == 'pedra' && jogador2 == 'papel'){
+        div_resultado.innerHTML = `Jogador 2 Venceu`
+    }
+    
+    if(jogador1 == 'papel' && jogador2 == 'pedra'){
+        div_resultado.innerHTML = `Jogador 1 Venceu`
+    }
+    
+    if(jogador1 == 'papel' && jogador2 == 'tesoura'){
+        div_resultado.innerHTML = `Jogador 2 Venceu`
+    }
+    
+    if(jogador1 == 'tesoura' && jogador2 == 'papel'){
+        div_resultado.innerHTML = `Jogador 1 Venceu`
+    } 
+    
+    if(jogador1 == 'tesoura' && jogador2 == 'pedra'){
+        div_resultado.innerHTML = `Jogador 2 Venceu`
+    }
+
+    if(jogador1 == jogador2){
+        div_resultado.innerHTML = `Empate`
+    }
+
+
+}
+
+
+</script>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<input id="ipt_teste" type="text">
+<button onclick="ver ()"> ver </button>
+<div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+
+function ver () {
+
+var teste = ipt_teste.value;
+var comprimento = teste.length;
+
+   for(var i = 0; i < comprimento ; i++ ){
+    div_mensagem.innerHTML += `${teste[0]} <br>`
+   }
+  
+
+}
+
+</script>

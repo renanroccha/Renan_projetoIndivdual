@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+Nome: <input id="nome_ipt" type="text"> <br>
+Distância: <input id="distancia_ipt" type="text"> <br>
+Bandeira: <input id="bandeira_ipt" type="text"> <br>
+Horario: <input id="hora_ipt" type="text"> <br>
+<button onclick="Calcular ()" > Calcular corrida </button>
+<div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+ 
+ function Calcular() {
+
+     var nome = (nome_ipt.value)
+     var km = Number(distancia_ipt.value)
+     var bandeira = Number(bandeira_ipt.value)
+     var hora = Number(hora_ipt.value)
+
+     if(bandeira <= 1) { 
+     if (bandeira >= 3) {
+
+     if (hora >= 0) {
+     if (hora <=23){
+
+        var valor_nominal = km * 1.25;
+
+
+        if (bandeira >=1) {
+            if(hora <=6) {
+                valor_nominal = valor_nominal *1.05;
+
+              if(hora >6) { 
+              if(hora <=12) {
+                valor_nominal = valor_nominal * 1.1;
+              }
+
+
+
+              }
+
+
+
+            }
+        
+        }
+    
+     }
+     }
+     }
+     }
+
+         if (hora >23) {
+        
+
+         }
+
+         }
+
+        
+
+</script>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    Intervalo 1 <input id="ipt_intervalo1" type="number"> <br>
+    Intervalo 2 <input id="ipt_intervalo2" type="number"> <br>
+    <button onclick="s2 ()"> s2 pares </button>
+    <div id="div_mensagem"></div>
+
+</body>
+
+</html>
+<script>
+
+    function s2() {
+
+
+        var int1 = Number(ipt_intervalo1.value);
+        var int2 = Number(ipt_intervalo2.value);
+        var pares = int1
+        var frase = ''
+
+
+        if (int2 > int1) {
+
+            while (pares <= int2) {
+                if(pares % 2 == 0){
+                    frase += `${pares} <br>`
+                }
+
+                pares += 1
+
+                }
+            }
+            div_mensagem.innerHTML += frase
+        }
+        
+
+
+
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+     Filme <input id="ipt_filme" type="text"> <br>
+     <button onclick = "cadastrarFilme()">cadastrar</button><br>
+     <div id="div_filmeTotal"></div>
+
+</body>
+</html>
+
+<script>
+    
+        var filmes = [];
+
+        function cadastrarFilme() {
+            var nomeFilme = ipt_filme.value;
+            
+            filmes.push(nomeFilme);
+            ipt_filme.value = "";
+            div_filmeTotal.innerHTML = "";
+            
+                exibir();
+            
+        }
+
+        function exibir() {
+
+            
+            div_filmeTotal.innerHTML += `Seu filme favorito: ${filmes[0]} <br>`;
+
+            if (filmes.length >= 3) {
+                div_filmeTotal.innerHTML += `Seu 3º filme favorito: ${filmes[2]} <br>`;
+            } else {
+                div_filmeTotal.innerHTML += "Ainda não existe <br>";
+            }
+
+            div_filmeTotal.innerHTML += `Total de filmes cadastrados: ${filmes.length}<br>`;
+    
+            div_filmeTotal.innerHTML += "Filmes cadastrados:" + filmes;
+        }
+
+
+</script>

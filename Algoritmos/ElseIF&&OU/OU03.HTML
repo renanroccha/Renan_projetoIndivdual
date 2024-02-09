@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+Renda Individual: <input id="ipt_individual" type="number"> <br>
+Renda Familiar: <input id="ipt_familiar" type="number"> <br>
+<button onclick="beneficio ()"> Terei o beneficio </button>
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+
+    function beneficio (){
+
+   var individual = Number(ipt_individual.value)
+   var familiar = Number(ipt_familiar.value)
+
+   if(individual <=3000 || familiar <=2000) {
+    div_mensagem.innerHTML = `Você terá direito ao auxílio`
+   }
+   else {div_mensagem.innerHTML = `Sem direito ao auxílio`}
+
+    }
+
+</script>

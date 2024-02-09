@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+
+        #filme-lista {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .filme-item {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .azul {
+            background-color: blue;
+        }
+
+        .vermelho {
+            background-color: red;
+        }
+    </style>
+    <script>
+        var contador = 0;
+
+        function cadastrarFilme() {
+            var nomeFilme = prompt('Informe o nome do filme:');
+            if (nomeFilme) {
+                var listaFilmes = document.getElementById('filme-lista');
+                var novoItem = document.createElement('li');
+                novoItem.textContent = nomeFilme;
+                
+                // Alternar entre azul e vermelho
+                novoItem.classList.add(contador % 2 === 0 ? 'azul' : 'vermelho');
+                contador++;
+
+                listaFilmes.appendChild(novoItem);
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Meus Filmes Favoritos</h1>
+    <button onclick="cadastrarFilme()">Cadastrar</button>
+    <ul id="filme-lista"></ul>
+</body>
+</html>

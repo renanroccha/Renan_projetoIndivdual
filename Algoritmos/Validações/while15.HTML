@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Elefantes <input id="ipt_elefante" type="number">
+    <button onclick="incomoda ()"> atazanar </button>
+    <div id="div_mensagem"></div>
+
+    
+</body>
+</html>
+<script>
+
+function incomoda () {
+
+    var qntdElefantes = Number(ipt_elefante.value);
+    var cancao = "";
+    var contador = 1;
+
+     div_mensagem.innerHTMl="";
+
+    while(contador <= qntdElefantes){
+        
+        contador += 1;
+
+        cancao += ` incomodam `;
+
+        div_mensagem.innerHTML += `1 Elefante incomoda muita gente <br>
+        ${contador} elefantes ${cancao} muito mais <br>`
+       
+       
+    }
+
+
+    
+
+}
+
+</script>

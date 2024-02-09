@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+   <button onclick="sortear ()">sortear nota</button>
+   <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>function sortear ()
+{
+
+var max = 10
+var min = 0
+var intervalo = max - min
+var aleatorio = min + Math.random() * intervalo
+
+div_mensagem.innerHTML = `${aleatorio.toFixed(1)}`
+
+}
+</script>

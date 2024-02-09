@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Filme: <input type="text" id="input_filme"> <br>
+    <button onclick="cadastrar()">Cadastrar Filme</button>
+    <div id="div_filmes"></div>
+</body>
+</html>
+
+<script>
+    var listaFilmes = [];
+
+    function cadastrar() {
+        div_filmes.innerHTML = ``;
+        
+        var filme = input_filme.value;
+
+        listaFilmes.push( filme ); // adiciona o filme na listaFilmes
+        
+// listaFilmes = ["ironman","batman","spiderman"]    UNDEFINED
+//    índices        0         1          2              3    > ...
+
+        for (var i = 0; i < listaFilmes.length; i++) {
+            var filmeAtual = listaFilmes[i]; // obtém o filme no índice [ i ] da lista de filmes
+
+            div_filmes.innerHTML += `<br>${filmeAtual}`; // exibe o filme
+        }   
+
+        // div_filmes.innerHTML = listaFilmes; // exibe a lista inteira, com seus elementos separados por vírgula, como: "1,2,3,4,5"
+
+    }
+
+</script>

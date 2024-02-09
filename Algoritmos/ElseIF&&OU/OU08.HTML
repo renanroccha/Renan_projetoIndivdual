@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+Nome da empresa: <input type="text" id="ipt_empresa"> <br>
+Valor bolsa empresa: <input type="number" id="ipt_bolsa"> <br>
+Valor VR empresa: <input type="number" id="ipt_vr"> <br>
+Tempo deslocamento: <input type="number" id="ipt_tempo">
+
+<button onclick="SPTech ()"> É preferida? </button>
+<div id="div_mensagem"></div>
+
+
+</body>
+</html>
+<script>
+
+function SPTech () {
+
+var empresa = ipt_empresa.value;
+var bolsa = Number(ipt_bolsa.value);
+var vr = Number(ipt_vr.value);
+var tempo = Number(ipt_tempo.value)
+
+if(bolsa >=1800 || vr >=20 || tempo <=30 ){
+    div_mensagem.innerHTML = `A empresa ${empresa} é uma de suas preferências`
+}
+else{div_mensagem.innerHTML = `A empresa ${empresa} está fora da sua lista`}
+
+
+}
+
+</script>

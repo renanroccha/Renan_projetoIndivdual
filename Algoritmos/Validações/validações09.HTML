@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+Numero: <input id="ipt_numero" type="Number"><br>
+Frase: <input id="ipt_frase" type="text"><br>
+<button onclick = "papagaio ()"> Papagaio </button>
+
+
+</body>
+</html>
+
+<script>
+
+function papagaio () {
+
+var numero = Number(ipt_numero.value);
+var frase = ipt_frase.value;
+
+var contador = 0;
+var fraseAlert = "";
+
+while (contador < numero) {
+   fraseAlert += `${frase}  `;
+    contador +=1;
+
+
+}
+
+contador = 0;
+
+while(contador < numero){
+    alert(fraseAlert)
+    contador +=1;
+}
+
+
+}
+
+
+</script>

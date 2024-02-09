@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análise de Performance</title>
+</head>
+<body>
+
+    <h1>Interface gráfica do usuário - Aplicativo</h1>
+
+    <input type="text" id="nome" placeholder="Digite o nome">
+    <input type="number" id="nota" placeholder="Digite a nota">
+    <button onclick="registrar()">Registrar</button>
+    <button onclick="analisar()">Analisar</button>
+
+    <h2>Dados Registrados:</h2>
+    <ul id="lista-dados"></ul>
+
+    <script>
+        function registrar() {
+            var nome = document.getElementById('nome').value;
+            var nota = document.getElementById('nota').value;
+
+            if (nome === '' || isNaN(nota) || nota < 0 || nota > 10) {
+                alert('Por favor, preencha o nome e digite uma nota válida entre 0 e 10.');
+                return;
+            }
+
+            var dados = { nome: nome, nota: nota };
+            registros.push(dados);
+            exibirDados();
+        }
+
+        function exibirDados() {
+            var lista = document.getElementById('lista-dados');
+            lista.innerHTML = '';
+
+            for (var i = registros.length - 1; i >= 0; i--) {
+                var item = document.createElement('li');
+                item.textContent = 'Nome: ' + registros[i].nome + ', Nota: ' + registros[i].nota;
+                lista.appendChild(item);
+            }
+        }
+
+        function analisar() {
+            document.getElementById('nome').value = '';
+            document.getElementById('nota').value = '';
+            document.getElementById('lista-dados').innerHTML = '';
+            // Adicione aqui o código para a Parte-2
+        }
+
+        var registros = [];
+    </script>
+
+</body>
+</html>
